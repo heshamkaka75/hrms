@@ -1,0 +1,43 @@
+﻿@model heshamhrms.Models.Departments
+
+@{
+    ViewBag.Title = "تفاصيل ادارة/فرع";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل ادارة/فرع</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Department_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Locations.Location_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Locations.Location_name).
+        </dd>
+
+        <dt>
+            مدير الادارة/الفرع
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employees1.Employee_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.Department_id }) |
+    @Html.ActionLink("الرجوع للقائمة", "Index")
+</p>

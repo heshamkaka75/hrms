@@ -1,0 +1,205 @@
+﻿@model heshamhrms.Models.Employees
+
+@{
+    ViewBag.Title = "تفاصيل موظف";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل موظف</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_of_birth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_of_birth).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mother_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mother_name).
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genders.Gender_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genders.Gender_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Countries.Country_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Countries.Country_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marital_Status.Marital_Status_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marital_Status.Marital_Status_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Religions.Religion_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Religions.Religion_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.National_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.National_no).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_no).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.National_services_status.National_services_status_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.National_services_status.National_services_status_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address).
+        </dd>
+        <dt>
+            المؤهل الدراسي
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qualifications.Qualification_name).
+        </dd>
+
+        <dt>
+            الجامعة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Qualification_university).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Qualification_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Qualification_date).
+        </dd>
+
+        <dt>
+            الدراسات العليا
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qualifications1.Qualification_name).
+        </dd>
+
+        <dt>
+            الجامعة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_high_Qualification_university).
+        </dd>
+
+        <dt>
+            تاريخ الحصول
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_high_Qualification_date).
+        </dd>
+
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Hire_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hire_date).
+        </dd>
+
+        <dt>
+            سنوات الخبرة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Experiences_years).
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Jobs.job_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jobs.job_title).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ranks.rank_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ranks.rank_name).
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departments.Department_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departments.Department_name).
+        </dd>
+
+        
+
+            @Html.ActionLink("تعديل", "Edit", new { id = Model.Employee_id }) | @Html.ActionLink("الرجوع للقائمة", "Index")
+
+        
+    </dl>
+
+</div>

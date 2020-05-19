@@ -1,0 +1,60 @@
+﻿@model heshamhrms.Models.Transfers
+
+@{
+    ViewBag.Title = "تفاصيل نقلية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل نقلية</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            اسم الموظف
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employees.Employee_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_time).
+        </dd>
+
+        <dt>
+            من
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departments.Department_name).
+        </dd>
+
+        <dt>
+            الي
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departments1.Department_name).
+        </dd>
+
+        <dt>
+            ادخل بواسطة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Users.User_name).
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.Transfer_id }) |
+    @Html.ActionLink("رجوع", "Index")
+</p>

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<heshamhrms.Models.Transfers>
+
+@{
+    ViewBag.Title = "التنقلات الداخلية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>التنقلات الداخلية</h2>
+
+<p>
+    @Html.ActionLink("جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                اسم الموظف
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_time)
+            </th>
+            <th>
+                من
+            </th>
+            <th>
+                الي
+            </th>
+            
+            <th>
+                ادخل بواسطة
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employees.Employee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departments.Department_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departments1.Department_name)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users.User_name)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.Transfer_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.Transfer_id })
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.Transfer_id })
+                </td>
+            </tr>
+        }
+
+</table>

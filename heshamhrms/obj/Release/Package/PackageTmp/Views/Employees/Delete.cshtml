@@ -1,0 +1,41 @@
+﻿@model heshamhrms.Models.Employees
+
+@{
+    ViewBag.Title = "حذف موظف";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>حذف موظف</h2>
+
+<h3>هل تريد حذف هذا الموظف ؟</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_name).
+        </dd>
+
+        <dt>
+            الاداره/الفرع
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departments.Department_name).
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف موظف" class="btn btn-danger" /> |
+            @Html.ActionLink("الرجوع للقائمة", "Index")
+        </div>
+    }
+</div>

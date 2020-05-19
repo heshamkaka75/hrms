@@ -1,0 +1,27 @@
+﻿@model heshamhrms.Models.Qualifications
+
+@{
+    ViewBag.Title = "تفاصيل شهاده اكادمية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل شهاده اكادمية</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Qualification_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qualification_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.Qualification_id }) |
+    @Html.ActionLink("الرجوع للقائمة", "Index")
+</p>

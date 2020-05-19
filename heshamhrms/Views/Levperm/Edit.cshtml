@@ -1,0 +1,76 @@
+﻿@model heshamhrms.Models.Leave_permission
+
+@{
+    ViewBag.Title = "تعديل إذن خروج";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تعديل إذن خروج</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.leave_id)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="leave_Employee_id">اسم الموظف</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("leave_Employee_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.leave_Employee_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.leave_Duration, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.leave_Duration)
+                @Html.ValidationMessageFor(model => model.leave_Duration)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Leave_Reason, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Leave_Reason)
+                @Html.ValidationMessageFor(model => model.Leave_Reason)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Edit_by, "Edit_by", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-number="The field ادخل بواسطة must be a number." id="edit_by" name="edit_by" type="text" value="@Model.Edit_by" readonly />
+                @Html.ValidationMessageFor(model => model.Edit_by)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date_time, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-date="The field تاريخ العملية must be a date." id="date_time" name="date_time" type="text" value="@Html.DisplayFor(model => model.Date_time)" readonly />
+                @Html.ValidationMessageFor(model => model.Date_time)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="تعديل إذن خروج" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("رجوع", "Index")
+</div>
+
+<script>
+    $(function () {
+        $("#leave_Employee_id").select2();
+    });
+</script>

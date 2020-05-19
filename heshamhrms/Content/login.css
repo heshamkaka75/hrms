@@ -1,0 +1,71 @@
+/* start login form */
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #ea975b;
+  font-size: 16px;
+  font-family:'Consolas';
+  background-image: url("/images/18.jpg");
+  background-repeat: no-repeat;
+    background-position: inherit;
+    background-attachment: fixed;
+    background-size:100%;
+    
+
+}
+
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* end login form */
+
+
+.h1fontlogin{
+    color:
+#7b2d07;
+font-family: castellar;
+font-size: 37px;
+}
+
+
+.errorup{
+    font-size: 15px;
+color:
+#fb0606;
+
+}
+

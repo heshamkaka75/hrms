@@ -1,0 +1,53 @@
+﻿@model heshamhrms.Models.Jobs
+
+@{
+    ViewBag.Title = "أضافة وظيفة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+}
+
+<h2>أضافة وظيفة</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.job_title, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.job_title)
+                @Html.ValidationMessageFor(model => model.job_title)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Job_details, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Job_details)
+                @Html.ValidationMessageFor(model => model.Job_details)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="إنشاء" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("الرجوع للقائمة", "Index")
+</div>

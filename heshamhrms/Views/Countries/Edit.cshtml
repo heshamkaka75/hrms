@@ -1,0 +1,38 @@
+﻿@model heshamhrms.Models.Countries
+
+@{
+    ViewBag.Title = "تعديل دولة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تعديل دولة</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Country_id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Country_name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Country_name)
+                @Html.ValidationMessageFor(model => model.Country_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="تعديل دولة" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("الرجوع الي القائمة", "Index")
+</div>

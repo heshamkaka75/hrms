@@ -1,0 +1,56 @@
+﻿@model heshamhrms.Models.Certificates
+
+@{
+    ViewBag.Title = "حذف شهادة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>حذف شهادة</h2>
+
+<h3>هل تريد الحذف ؟</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employees.Employee_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employees.Employee_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Certificate_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Certificate_name).
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Certificate_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Certificate_type).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Certificate_source)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Certificate_source).
+        </dd>
+        
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف شهادة" class="btn btn-danger" /> |
+            @Html.ActionLink("رجوع", "Index")
+        </div>
+    }
+</div>

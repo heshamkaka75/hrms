@@ -1,0 +1,264 @@
+﻿@model heshamhrms.Models.Employees
+
+@{
+    ViewBag.Title = "موظف جديد";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>موظف جديد</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Employee_name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Employee_name)
+                @Html.ValidationMessageFor(model => model.Employee_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date_of_birth, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Date_of_birth)
+                @Html.ValidationMessageFor(model => model.Date_of_birth)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mother_name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Mother_name)
+                @Html.ValidationMessageFor(model => model.Mother_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Employee_gender_id">الجنس</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Employee_gender_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Employee_gender_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Employee_Country_id">الجنسية</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Employee_Country_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Employee_Country_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Employee_Marital_Status_id">الحالة الاجتماعية</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Employee_Marital_Status_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Employee_Marital_Status_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Employee_Religion_id">الديانة</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Employee_Religion_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Employee_Religion_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.National_no, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.National_no)
+                @Html.ValidationMessageFor(model => model.National_no)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phone_no, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Phone_no)
+                @Html.ValidationMessageFor(model => model.Phone_no)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Employee_national_services_status_id">حالة الخدمة</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Employee_national_services_status_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Employee_national_services_status_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Employee_Qualification_id">المؤهل</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Employee_Qualification_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Employee_Qualification_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Employee_Qualification_university, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Employee_Qualification_university)
+                @Html.ValidationMessageFor(model => model.Employee_Qualification_university)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Employee_Qualification_date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Employee_Qualification_date)
+                @Html.ValidationMessageFor(model => model.Employee_Qualification_date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Employee_high_Qualification_id">شهاده عليا</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Employee_high_Qualification_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Employee_high_Qualification_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" >الجامعة</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Employee_high_Qualification_university)
+                @Html.ValidationMessageFor(model => model.Employee_high_Qualification_university)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Employee_high_Qualification_date">تاريح الحصول</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Employee_high_Qualification_date)
+                @Html.ValidationMessageFor(model => model.Employee_high_Qualification_date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Hire_date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Hire_date)
+                @Html.ValidationMessageFor(model => model.Hire_date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Experiences_years">سنوات الخبرة</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Experiences_years)
+                @Html.ValidationMessageFor(model => model.Experiences_years)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Employee_Job_id">الوظيفة</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Employee_Job_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Employee_Job_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Employee_Rank_id">الدرجة الوظيفية</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Employee_Rank_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Employee_Rank_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Employee_Department_id">الادارة/الفرع</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Employee_Department_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Employee_Department_id)
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="تعين موظف جديد" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    $(function () {
+        $("#Employee_gender_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#Employee_Country_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#Employee_Marital_Status_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#Employee_Religion_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#Employee_national_services_status_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#Employee_Qualification_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#Employee_high_Qualification_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#Employee_Job_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#Employee_Rank_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#Employee_Department_id").select2();
+    });
+</script>
+

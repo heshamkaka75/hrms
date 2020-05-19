@@ -1,0 +1,44 @@
+﻿@model IEnumerable<heshamhrms.Models.Employees>
+@{
+    ViewBag.Title = "اجازات";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>اجازات</h2>
+
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departments.Department_name)
+            </th>
+
+
+            <th>
+                تفاصيل
+            </th>
+            
+        </tr>
+        </thead>
+        @foreach (var item in Model.OrderBy(item => item.Employee_name))
+        {
+            <tr>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departments.Department_name)
+                </td>
+                <td>
+                    @Html.ActionLink("تفاصيل", "empdt", new { id = item.Employee_id })
+                </td>
+
+            </tr>
+        }
+
+</table>

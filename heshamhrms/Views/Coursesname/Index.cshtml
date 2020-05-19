@@ -1,0 +1,45 @@
+﻿@model IEnumerable<heshamhrms.Models.Courses_name>
+
+@{
+    ViewBag.Title = "الدورات التدريبية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>الدورات التدريبية</h2>
+
+<p>
+    @Html.ActionLink("إنشاء جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Course_name)
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course_name)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.Course_name_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.Course_name_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.Course_name_id })
+                </td>
+            </tr>
+        }
+
+</table>

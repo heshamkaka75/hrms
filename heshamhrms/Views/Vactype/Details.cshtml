@@ -1,0 +1,27 @@
+﻿@model heshamhrms.Models.Vacations_type
+
+@{
+    ViewBag.Title = "تفاصيل نوع اجازة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل نوع اجازة</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vacation_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vacation_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.Vacation_type_id }) |
+    @Html.ActionLink("رجوع للقائمة", "Index")
+</p>

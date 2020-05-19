@@ -1,0 +1,76 @@
+﻿@model heshamhrms.Models.alerts
+
+@{
+    ViewBag.Title = "إنذار جديد لموظف";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>إنذار جديد لموظف</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Alert_Employee_id">اسم الموظف</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Alert_Employee_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Alert_Employee_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.alert_date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.alert_date)
+                @Html.ValidationMessageFor(model => model.alert_date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.alert_Reason, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.alert_Reason)
+                @Html.ValidationMessageFor(model => model.alert_Reason)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Edit_by">ادخل بواسطة</label>
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-number="The field ادخل بواسطة must be a number." id="edit_by" name="edit_by" type="text" value="@Session["userid"] " readonly />
+                @Html.ValidationMessageFor(model => model.Edit_by)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date_time, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-date="The field تاريخ العملية must be a date." id="date_time" name="date_time" type="text" value="@DateTime.Today" readonly />
+                @Html.ValidationMessageFor(model => model.Date_time)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="إنذار جديد لموظف" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("رجوع", "Index")
+</div>
+
+
+<script>
+    $(function () {
+        $("#Alert_Employee_id").select2();
+    });
+</script>

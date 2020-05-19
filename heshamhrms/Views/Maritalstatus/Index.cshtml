@@ -1,0 +1,45 @@
+﻿@model IEnumerable<heshamhrms.Models.Marital_Status>
+
+@{
+    ViewBag.Title = "الحالة الاجتماعية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>الحالة الاجتماعية</h2>
+
+<p>
+    @Html.ActionLink("إنشاء الحالة الاجتماعية", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Marital_Status_name)
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marital_Status_name)
+            </td>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.Marital_Status_id }) 
+            </td>
+            <td>
+                
+                @Html.ActionLink("تفاصيل", "Details", new { id = item.Marital_Status_id }) 
+                
+            </td>
+            <td>
+                @Html.ActionLink("حذف", "Delete", new { id = item.Marital_Status_id })
+            </td>
+        </tr>
+    }
+
+</table>
+

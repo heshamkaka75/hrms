@@ -1,0 +1,46 @@
+﻿@model IEnumerable<heshamhrms.Models.Countries>
+
+@{
+    ViewBag.Title = "الدول";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>الدول</h2>
+
+<p>
+    @Html.ActionLink("إنشاء دولة", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Country_name)
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+    </thead>
+
+        @foreach (var item in Model.OrderBy(item=>item.Country_name))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country_name)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.Country_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.Country_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.Country_id })
+                </td>
+            </tr>
+            
+        }
+
+</table>

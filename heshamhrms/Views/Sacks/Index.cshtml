@@ -1,0 +1,71 @@
+﻿@model IEnumerable<heshamhrms.Models.sacks>
+
+@{
+    ViewBag.Title = "الأرانيك المرضية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>الأرانيك المرضية</h2>
+
+<p>
+    @Html.ActionLink("جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sack_data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.Employee_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sack_Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_time)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Users.User_name)
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sack_data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employees.Employee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sack_Reason)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_time)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users.User_name)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.sack_id })
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.sack_id }) 
+                    
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("حذف", "Delete", new { id = item.sack_id })
+                </td>
+            </tr>
+        }
+
+</table>

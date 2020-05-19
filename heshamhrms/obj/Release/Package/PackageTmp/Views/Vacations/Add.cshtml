@@ -1,0 +1,141 @@
+﻿
+@model heshamhrms.Models.Vacations
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Add</h2>
+
+
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-9 text-right">
+
+                        <div>2019</div>
+                        <p>سنوي:11 - المتبقي:5</p>
+                        <p>محلي:66 - المتبقي:44</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-9 text-right">
+
+                        <div>2020</div>
+                        <p>سنوي:11 - المتبقي:5</p>
+                        <p>محلي:66 - المتبقي:44</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+<!-- /.row -->
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Vacations</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vacation_employee_name, "Vacation_employee_name", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Vacation_employee_name", String.Empty)
+                @Html.ValidationMessageFor(model => model.Vacation_employee_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vacation_vt_id, "Vacation_vt_id", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Vacation_vt_id", String.Empty)
+                @Html.ValidationMessageFor(model => model.Vacation_vt_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vacation_depatrments_id, "Vacation_depatrments_id", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Vacation_depatrments_id", String.Empty)
+                @Html.ValidationMessageFor(model => model.Vacation_depatrments_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vacation_duration, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Vacation_duration)
+                @Html.ValidationMessageFor(model => model.Vacation_duration)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vacation_start_date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Vacation_start_date)
+                @Html.ValidationMessageFor(model => model.Vacation_start_date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vacation_end_date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Vacation_end_date)
+                @Html.ValidationMessageFor(model => model.Vacation_end_date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vacation_Reason, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Vacation_Reason)
+                @Html.ValidationMessageFor(model => model.Vacation_Reason)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Edit_by, "Edit_by", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Edit_by", String.Empty)
+                @Html.ValidationMessageFor(model => model.Edit_by)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date_time, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Date_time)
+                @Html.ValidationMessageFor(model => model.Date_time)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

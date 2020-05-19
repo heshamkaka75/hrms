@@ -1,0 +1,59 @@
+﻿@model heshamhrms.Models.stop_working
+
+@{
+    ViewBag.Title = "تفاصيل إيقاف موظف";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل إيقاف موظف</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employees.Employee_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employees.Employee_name).
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.stop_working_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stop_working_date).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stop_working_Reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stop_working_Reason).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_time).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Users.User_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Users.User_name).
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.stop_working_id }) |
+    @Html.ActionLink("رجوع", "Index")
+</p>

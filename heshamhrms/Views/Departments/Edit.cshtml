@@ -1,0 +1,76 @@
+﻿@model heshamhrms.Models.Departments
+
+@{
+    ViewBag.Title = "تعديل ادارة/فرع";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    
+
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+
+}
+
+<h2>تعديل ادارة/فرع</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Department_id)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Department_name">الادارة/الفرع</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Department_name)
+                @Html.ValidationMessageFor(model => model.Department_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Manger_id">مدير الادارة/الفرع</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Manger_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Manger_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Department_Location_id">موقع الادارة/الفرع</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Department_Location_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Department_Location_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="تعديل ادارة/فرع" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("الرجوع للقائمة", "Index")
+</div>
+
+
+<script>
+    $(function () {
+        $("#Manger_id,Department_Location_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#Department_Location_id").select2();
+    });
+</script>

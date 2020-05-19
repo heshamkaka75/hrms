@@ -1,0 +1,72 @@
+﻿@model IEnumerable<heshamhrms.Models.Users>
+
+@{
+    ViewBag.Title = "المستخدمين";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+}
+
+<h2>مستخدمين النظام</h2>
+
+<p>
+    @Html.ActionLink("مستخدم جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+
+            <th>
+                اسم المستخدم
+            </th>
+            <th>
+                كلمة المرور
+            </th>
+            <th>
+                الاسم الكامل
+            </th>
+            <th>
+                الصلاحية
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model.OrderBy(item => item.User_name))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fullname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Authorities.auth_name)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.User_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.User_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.User_id })
+                </td>
+            </tr>
+        }
+
+</table>

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<heshamhrms.Models.Vacations>
+
+@{
+    ViewBag.Title = "تفاصيل الاجازات";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل الاجازات</h2>
+
+<p>
+    @Html.ActionLink("رصيد الموظفين", "emp")  | @Html.ActionLink("اجازة جديدة", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.Employee_name)
+            </th>
+            <th>
+                الادارة - الفرع
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vacations_type.Vacation_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vacation_duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vacation_start_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vacation_end_date)
+            </th>
+            
+            
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employees.Employee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departments.Department_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vacations_type.Vacation_name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vacation_duration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vacation_start_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vacation_end_date)
+                </td>
+                
+                
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.Vacation_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.Vacation_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.Vacation_id })
+                </td>
+            </tr>
+        }
+
+</table>

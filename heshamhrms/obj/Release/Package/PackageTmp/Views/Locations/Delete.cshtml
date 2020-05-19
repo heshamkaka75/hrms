@@ -1,0 +1,64 @@
+﻿@model heshamhrms.Models.Locations
+
+@{
+    ViewBag.Title = "حذف موقع";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+}
+
+<h2>حذف موقع</h2>
+
+<h3>هل تريد حذف موقع ؟</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Location_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_no).
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف موقع" class="btn btn-danger" /> |
+            @Html.ActionLink("الرجوع للقائمة", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,45 @@
+﻿@model heshamhrms.Models.ranks
+
+@{
+    ViewBag.Title = "إنشاء درجة وظيفية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+}
+
+<h2>إنشاء درجة وظيفية</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.rank_name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.rank_name)
+                @Html.ValidationMessageFor(model => model.rank_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="إنشاء درجة وظيفية" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("الرجوع للقائمة", "Index")
+</div>

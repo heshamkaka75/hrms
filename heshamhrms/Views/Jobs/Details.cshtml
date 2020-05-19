@@ -1,0 +1,35 @@
+﻿@model heshamhrms.Models.Jobs
+
+@{
+    ViewBag.Title = "تفاصيل الوظيفة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل الوظيفة</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.job_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.job_title).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_details)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job_details).
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.job_id }) |
+    @Html.ActionLink("الرجوع الي القائمة", "Index")
+</p>

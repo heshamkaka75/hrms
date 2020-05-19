@@ -1,0 +1,27 @@
+﻿@model heshamhrms.Models.Authorities
+
+@{
+    ViewBag.Title = "تفاصيل الصلاحية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل الصلاحية</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.auth_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.auth_name).
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.auth_id }) |
+    @Html.ActionLink("رجوع", "Index")
+</p>

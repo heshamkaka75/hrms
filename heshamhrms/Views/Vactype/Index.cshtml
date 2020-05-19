@@ -1,0 +1,52 @@
+﻿@model IEnumerable<heshamhrms.Models.Vacations_type>
+
+@{
+    ViewBag.Title = "انواع الاجازات";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+}
+
+<h2>انواع الاجازات</h2>
+
+<p>
+    @Html.ActionLink("جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vacation_name)
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vacation_name)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.Vacation_type_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.Vacation_type_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.Vacation_type_id })
+                </td>
+            </tr>
+        }
+
+</table>

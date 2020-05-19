@@ -1,0 +1,202 @@
+﻿@model heshamhrms.Models.Employees
+
+@{
+    ViewBag.Title = "إجازات موظف";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    
+}
+
+
+<h1> إجازات : @Model.Employee_name </h1> 
+
+<a href="~/Vacations/Create" class="btn btn-primary">  طلب اجازة <i class="fa fa-plus"></i></a>
+<div class="row">
+    <div class="col-sm-4">
+        <h3>اجازات العام 2019</h3>
+        <table class="table table-striped vt">
+
+            <tr>
+                <th>
+                     السنوية 
+                </th>
+                <th>
+                    متبقي السنوية 
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    @ViewBag.ann19 .
+                </td>
+                <td>
+                    @ViewBag.restann19 .
+                </td>
+            </tr>
+            
+            <tr>
+                <th>
+                    المحلية
+                </th>
+                <th>
+                    متبقي المحلية
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @ViewBag.loc19 .
+                </td>
+                <td>
+                    @ViewBag.restlo19 .
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    بدون مرتب
+                </th>
+                <th>
+                    متبقي بدون مرتب
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @ViewBag.nosal19 .
+                </td>
+                <td>
+                    @ViewBag.restnosal19 .
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    الحج
+                </th>
+                <th>
+                    متبقي الحج
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @ViewBag.haj19 .
+                </td>
+                <td>
+                    @ViewBag.resthj19 .
+                </td>
+            </tr>
+
+
+            <tr>
+                <th>
+                    وضوع
+                </th>
+                <th>
+                    متبقي وضوع
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @ViewBag.bab19 .
+                </td>
+                <td>
+                    @ViewBag.restba19 .
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="col-sm-4">
+        <h3>اجازات العام 2020</h3>
+
+        <table class="table table-striped vt">
+
+            <tr>
+                <th>
+                     السنوية 
+                </th>
+                <th>
+                    متبقي السنوية 
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    @ViewBag.ann20 .
+                </td>
+                <td>
+                    @ViewBag.restann20 .
+                </td>
+            </tr>
+            <tr>
+                <th>
+                     المحلية 
+                </th>
+                <th>
+                    متبقي المحلية 
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @ViewBag.loc20 .
+                </td>
+                <td>
+                    @ViewBag.restlo20 .
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    بدون مرتب
+                </th>
+                <th>
+                    متبقي بدون مرتب
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @ViewBag.nosal20 .
+                </td>
+                <td>
+                    @ViewBag.restnosal20 .
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    الحج
+                </th>
+                <th>
+                    متبقي الحج
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @ViewBag.haj20 .
+                </td>
+                <td>
+                    @ViewBag.resthj20 .
+                </td>
+            </tr>
+
+
+            <tr>
+                <th>
+                    وضوع
+                </th>
+                <th>
+                    متبقي وضوع
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @ViewBag.bab20 .
+                </td>
+                <td>
+                    @ViewBag.restba20 .
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>

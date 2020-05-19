@@ -1,0 +1,60 @@
+﻿@model heshamhrms.Models.Vacation_Balances
+
+@{
+    ViewBag.Title = "بيانات رصيد الاجازات";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>بيانات رصيد الاجازات</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employees.Employee_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employees.Employee_name).
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vacations_type.Vacation_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vacations_type.Vacation_name).
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.vb_total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vb_total).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.edit_by)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edit_by).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_time).
+        </dd>
+
+        
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.Vacation_Balances_id }) |
+    @Html.ActionLink("رجوع للقائمة", "Index")
+</p>

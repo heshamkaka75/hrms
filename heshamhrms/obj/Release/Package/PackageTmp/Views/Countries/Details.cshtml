@@ -1,0 +1,27 @@
+﻿@model heshamhrms.Models.Countries
+
+@{
+    ViewBag.Title = "تفاصيل دولة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل دولة</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Country_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تفاصيل دولة", "Edit", new { id = Model.Country_id }) |
+    @Html.ActionLink("الرجوع للقائمة", "Index")
+</p>

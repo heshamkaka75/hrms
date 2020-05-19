@@ -1,0 +1,172 @@
+﻿@model heshamhrms.Models.trainings
+
+@{
+    ViewBag.Title = "تعديل بيانات متدرب";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تعديل بيانات متدرب</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.training_id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.training_name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.training_name)
+                @Html.ValidationMessageFor(model => model.training_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date_of_birth, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-date="The field تاريخ الميلاد must be a date." id="Date_of_birth" name="Date_of_birth" type="text" value="@Html.DisplayFor(model => model.Date_of_birth)" />
+                @Html.ValidationMessageFor(model => model.Date_of_birth)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Country_id">الجنسية</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Country_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Country_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.National_no, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.National_no)
+                @Html.ValidationMessageFor(model => model.National_no)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phone_no, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Phone_no)
+                @Html.ValidationMessageFor(model => model.Phone_no)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="training_Religion_id">الديانة</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("training_Religion_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.training_Religion_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="training_Marital_Status_id">الحالة الإجتماعية</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("training_Marital_Status_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.training_Marital_Status_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="training_Qualification_id">المؤهل الدراسي</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("training_Qualification_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.training_Qualification_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.training_Qualification_university, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.training_Qualification_university)
+                @Html.ValidationMessageFor(model => model.training_Qualification_university)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.training_Qualification_date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-date="The field تاريخ الشهادة must be a date." id="training_Qualification_date" name="training_Qualification_date" type="text" value="@Html.DisplayFor(model => model.training_Qualification_date)" />
+                @Html.ValidationMessageFor(model => model.training_Qualification_date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Start_date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-date="The field بداية التدريب must be a date." id="Start_date" name="Start_date" type="text" value="@Html.DisplayFor(model => model.Start_date)" />
+                @Html.ValidationMessageFor(model => model.Start_date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.end_date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-date="The field نهاية التدريب must be a date." id="end_date" name="end_date" type="text" value="@Html.DisplayFor(model => model.end_date)" />
+                @Html.ValidationMessageFor(model => model.end_date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Department_id">الادارة - الفرع</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Department_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Department_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="تعديل بيانات متدرب" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("رجوع", "Index")
+</div>
+
+<script>
+    $(function () {
+        $("#Country_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#training_Religion_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#training_Marital_Status_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#training_Qualification_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#Department_id").select2();
+    });
+</script>

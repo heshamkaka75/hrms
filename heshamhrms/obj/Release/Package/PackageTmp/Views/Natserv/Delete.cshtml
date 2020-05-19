@@ -1,0 +1,41 @@
+﻿@model heshamhrms.Models.national_services
+
+@{
+    ViewBag.Title = "حذف مجند خدمة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>حذف مجند خدمة</h2>
+
+<h3>هل تريد الحذف ؟</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.national_service_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.national_service_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departments.Department_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departments.Department_name).
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف مجند خدمة" class="btn btn-danger" /> |
+            @Html.ActionLink("رجوع", "Index")
+        </div>
+    }
+</div>

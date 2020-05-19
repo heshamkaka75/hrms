@@ -1,0 +1,27 @@
+﻿@model heshamhrms.Models.National_services_status
+
+@{
+    ViewBag.Title = "تفاصيل حالة الخدمة الوطنية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل حالة الخدمة الوطنية</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.National_services_status_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.National_services_status_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.National_services_status_id }) |
+    @Html.ActionLink("الرجوع للقائمة", "Index")
+</p>

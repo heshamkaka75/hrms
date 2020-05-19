@@ -1,0 +1,265 @@
+﻿
+@{
+    try { if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+       }
+    catch { Response.Redirect("~/Login/home"); }
+        
+    ViewBag.Title = " الإدارة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+<div class="jumbotron text-center">
+    <div class="h1fonthome"><h1>الإدارة </h1></div>
+    
+</div>
+
+
+<div class="boxess">
+
+    <div class="row">
+        <a href="/auth">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-plug fa-lg"></i></div>
+                                <div>صلاحيات النظام</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="~/users">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-user fa-lg"></i></div>
+                                <div>مستخدمين النظام</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="~/jobs">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-briefcase fa-lg"></i></div>
+                                <div>الوظائف</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="~/ranks">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-bookmark fa-lg"></i></div>
+                                <div>الدرجات الوظيفية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+
+
+    <div class="row">
+        <a href="~/Countries">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-flag fa-lg"></i></div>
+                                <div>الدول</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="~/Qualifications">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-certificate fa-lg"></i></div>
+                                <div>المؤهلات الاكادمية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="~/Locations">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-location-arrow fa-lg"></i></div>
+                                <div>المواقع</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="~/Coursesname">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-graduation-cap fa-lg"></i></div>
+                                <div> الدورات التدربية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+
+
+    <div class="row">
+        <a href="~/Religions">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-moon-o fa-lg"></i></div>
+                                <div>الديانات</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="~/Maritalstatus">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-users fa-lg"></i></div>
+                                <div>الحالة الاجتماعية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="~/Natserv">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-archive fa-lg"></i></div>
+                                <div>الخدمه الوطنية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="~/genders">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-mars fa-lg"></i></div>
+                                <div>الجنس</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+
+    <div class="row">
+        <a href="~/Departments">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-bank fa-lg"></i></div>
+                                <div>الادارات الفروع</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="~/vactype">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-gamepad fa-lg"></i></div>
+                                <div>انواع الاجازات</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="~/vacbalance">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-gears fa-lg"></i> | <i class="fa fa-plus fa-lg"></i></div>
+                                <div>رصيد الاجازات</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+       
+    </div>
+
+    </div>

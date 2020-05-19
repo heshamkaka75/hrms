@@ -1,0 +1,51 @@
+﻿@model IEnumerable<heshamhrms.Models.Authorities>
+
+@{
+    ViewBag.Title = "صلاحيات المستخدمين";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+}
+
+<h2>صلاحيات المستخدمين</h2>
+
+<p>
+    @Html.ActionLink("أضافة صلاحية", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                أسم الصلاحية
+            </th>
+            <th>
+                تعديل
+            </th>
+            <th>
+                تفاصيل
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.auth_name)
+            </td>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.auth_id }) </td>
+            <td>
+                @Html.ActionLink("تفاصيل", "Details", new { id = item.auth_id }) 
+                
+            </td>
+        </tr>
+    }
+
+</table>

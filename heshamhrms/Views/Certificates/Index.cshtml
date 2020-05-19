@@ -1,0 +1,70 @@
+﻿@model IEnumerable<heshamhrms.Models.Certificates>
+
+@{
+    ViewBag.Title = "الشهادات";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>الشهادات</h2>
+
+<p>
+    @Html.ActionLink("جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.Employee_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Certificate_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Certificate_source)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Certificate_from)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Certificate_to)
+            </th>
+
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+        @foreach (var item in Model.OrderBy(item => item.Employees.Employee_name))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employees.Employee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Certificate_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Certificate_source)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Certificate_from)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Certificate_to)
+                </td>
+
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.Certificate_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.Certificate_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.Certificate_id })
+                </td>
+            </tr>
+        }
+
+</table>

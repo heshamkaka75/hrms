@@ -1,0 +1,59 @@
+﻿@model heshamhrms.Models.sacks
+
+@{
+    ViewBag.Title = "تفاصيل أورنيك";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل أورنيك</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sack_data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sack_data).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employees.Employee_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employees.Employee_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sack_Reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sack_Reason).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_time).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Users.User_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Users.User_name).
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.sack_id }) |
+    @Html.ActionLink("رجوع", "Index")
+</p>

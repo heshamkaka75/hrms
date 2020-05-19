@@ -1,0 +1,68 @@
+﻿@model IEnumerable<heshamhrms.Models.national_services>
+
+@{
+    ViewBag.Title = "الخدمة الوطنية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>الخدمة الوطنية</h2>
+
+<p>
+    @Html.ActionLink("مجند جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.national_service_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_of_birth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.national_service_Qualification_university)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.start_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departments.Department_name)
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.national_service_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_of_birth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.national_service_Qualification_university)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.start_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departments.Department_name)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.national_service_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.national_service_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.national_service_id })
+                </td>
+            </tr>
+        }
+
+</table>

@@ -1,0 +1,49 @@
+﻿@model heshamhrms.Models.Jobs
+
+@{
+    ViewBag.Title = "حذف وظيفة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+}
+
+<h2>حذف وظيفة</h2>
+
+<h3>هل تريد حذف هذه الوظيفة ؟</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.job_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.job_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_details)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job_details)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف !" class="btn btn-danger" /> |
+            @Html.ActionLink("الرجوع للقائمة", "Index")
+        </div>
+    }
+</div>

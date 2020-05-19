@@ -1,0 +1,72 @@
+﻿@model IEnumerable<heshamhrms.Models.Vacation_Balances>
+
+@{
+    ViewBag.Title = "رصيد الاجازات";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>رصيد الاجازات</h2>
+
+<p>
+    @Html.ActionLink("جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.Employee_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vacations_type.Vacation_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vb_total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.edit_by)
+            </th>
+
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+        @foreach (var item in Model.OrderBy(item => item.Employees.Employee_name))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employees.Employee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vacations_type.Vacation_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vb_total)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date_time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.edit_by)
+                </td>
+
+
+
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.Vacation_Balances_id })
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.Vacation_Balances_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.Vacation_Balances_id })
+                </td>
+            </tr>
+        }
+
+</table>

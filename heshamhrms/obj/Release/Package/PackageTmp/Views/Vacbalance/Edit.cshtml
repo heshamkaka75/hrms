@@ -1,0 +1,89 @@
+﻿@model heshamhrms.Models.Vacation_Balances
+
+@{
+    ViewBag.Title = "تعديل رصيد اجازات";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+}
+
+<h2>تعديل رصيد اجازات</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Vacation_Balances_id)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Vb_vt_id">نوع الاجازة</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Vb_vt_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Vb_vt_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="vb_emp_id">اسم الموظف</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("vb_emp_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.vb_emp_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.vb_total, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vb_total)
+                @Html.ValidationMessageFor(model => model.vb_total)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.edit_by, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-number="The field ادخل بواسطة must be a number." id="edit_by" name="edit_by" type="text" value="@Model.edit_by" readonly/>
+                @Html.ValidationMessageFor(model => model.edit_by)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.date_time, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-date="The field تاريخ العملية must be a date." id="date_time" name="date_time" type="text" value="@Model.date_time" readonly/>
+                @Html.ValidationMessageFor(model => model.date_time)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="تعديل رصيد اجازات" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("رجوع", "Index")
+</div>
+
+<script>
+    $(function () {
+        $("#Vb_vt_id").select2();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#vb_emp_id").select2();
+    });
+</script>

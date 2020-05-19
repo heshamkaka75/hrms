@@ -1,0 +1,65 @@
+﻿@model heshamhrms.Models.sacks
+
+@{
+    ViewBag.Title = "حذف أورنيك";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>حذف أورنيك</h2>
+
+<h3>هل تريد الحذف ؟</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sack_data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sack_data).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employees.Employee_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employees.Employee_name).
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sack_Reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sack_Reason).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_time).
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Users.User_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Users.User_name).
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف أورنيك" class="btn btn-danger" /> |
+            @Html.ActionLink("رجوع", "Index")
+        </div>
+    }
+</div>

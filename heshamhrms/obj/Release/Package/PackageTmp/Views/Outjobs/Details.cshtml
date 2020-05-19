@@ -1,0 +1,76 @@
+﻿@model heshamhrms.Models.Out_jobs
+
+@{
+    ViewBag.Title = "تفاصيل مأمورية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل مأمورية</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Out_job_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Out_job_date).
+        </dd>
+
+        <dt>
+            اسم الموظف
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employees.Employee_name).
+        </dd>
+        <dt>
+            الجهة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departments.Department_name).
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Out_job_reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Out_job_reason).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Out_job_duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Out_job_duration).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_time).
+        </dd>
+
+        
+        <dt>
+            ادخل بواسطة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Users.User_name).
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.Out_job_id }) |
+    @Html.ActionLink("رجوع", "Index")
+</p>

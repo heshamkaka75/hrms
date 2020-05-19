@@ -1,0 +1,283 @@
+﻿
+@{
+    if (Session["userid"] == null)
+    {
+        Response.Redirect("~/Login/index");
+    }
+    ViewBag.Title = "الصفحة الرئيسية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="jumbotron text-center">
+    <div class="h1fonthome"><h1>نظام ادارة الموارد البشرية</h1></div>
+    
+</div>
+
+<!-- /.row -->
+<div class="boxess">
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <a href="~/Employees/Index">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-users fa-lg"></i></div>
+                                <div>سجلات الموظفين</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/departments">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-institution fa-lg"></i></div>
+                                <div>الادارات والفروع</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/Courses">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-graduation-cap fa-lg fa-lg"></i></div>
+                                <div>الدورات التدريبية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+                </div>
+
+        <div class="col-lg-3 col-md-6">
+            <a href="~/Sacks">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-hospital-o fa-lg"></i></div>
+                                <div>أرانيك المررضية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <a href="~/vacations">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-bed fa-lg"></i></div>
+                                <div>اجازات الموظفين</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/Certificates/Index">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-certificate fa-lg"></i></div>
+                                <div>الشهادات</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/alerts">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-warning fa-lg"></i></div>
+                                <div>الانذارات</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/resingns">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-ge fa-lg"></i></div>
+                                <div>استقالات الموظفين</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <a href="~/Natserv">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-archive fa-lg"></i></div>
+                                <div>الخدمة الوطنية</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/Trinings">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-graduation-cap fa-lg"></i></div>
+                                <div>المتدربين</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/levperm">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-check fa-lg"></i></div>
+                                <div>اذونات الخروج</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/Manifestations">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-info fa-lg"></i></div>
+                                <div>استضاحات</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <a href="~/Outjobs">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-plane fa-lg"></i></div>
+                                <div>المؤموريات</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/transfers">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-random fa-lg"></i></div>
+                                <div>التنقلات الداخلية</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/stopwork">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-stop fa-lg"></i></div>
+                                <div>إيقاف الخدمة</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/Login/Dashboord">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <div class="huge"><i class="fa fa-info-circle fa-lg"></i> | <i class="fa fa-gear fa-lg"></i></div>
+                                <div>الإدارة</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+    <!-- /.row -->
+</div>

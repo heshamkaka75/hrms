@@ -1,0 +1,58 @@
+﻿@model heshamhrms.Models.Out_jobs
+
+@{
+    ViewBag.Title = "حذف مأمورية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>حذف مأمورية</h2>
+
+<h3>هل تريد الحذف ؟</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Out_job_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Out_job_date).
+        </dd>
+        <dt>
+            اسم الموظف
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employees.Employee_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_time).
+        </dd>
+
+        <dt>
+            الجهة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departments.Department_name).
+        </dd>
+
+        
+        
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف مأمورية" class="btn btn-danger" /> |
+            @Html.ActionLink("رجوع", "Index")
+        </div>
+    }
+</div>

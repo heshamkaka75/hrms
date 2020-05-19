@@ -1,0 +1,45 @@
+﻿@model IEnumerable<heshamhrms.Models.ranks>
+
+@{
+    ViewBag.Title = "الدرجات الوظيفية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>الدرجات الوظيفية</h2>
+
+<p>
+    @Html.ActionLink("إنشاء جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.rank_name)
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.rank_name)
+            </td>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.rank_id }) 
+            </td>
+            <td>
+                
+                @Html.ActionLink("تفاصيل", "Details", new { id = item.rank_id }) 
+                
+            </td>
+            <td>
+                @Html.ActionLink("حذف", "Delete", new { id = item.rank_id })
+            </td>
+        </tr>
+    }
+
+</table>
+

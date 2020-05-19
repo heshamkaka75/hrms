@@ -1,0 +1,27 @@
+﻿@model heshamhrms.Models.Religions
+
+@{
+    ViewBag.Title = "تفاصيل ديانة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل ديانة</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Religion_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Religion_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.Religion_id }) |
+    @Html.ActionLink("الرجوع للقائمة", "Index")
+</p>

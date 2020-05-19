@@ -1,0 +1,41 @@
+﻿@model heshamhrms.Models.trainings
+
+@{
+    ViewBag.Title = "حذف متدرب";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>حذف متدرب</h2>
+
+<h3>هل تريد الحذف ؟</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.training_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.training_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.training_Qualification_university)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.training_Qualification_university).
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف متدرب" class="btn btn-danger" /> |
+            @Html.ActionLink("رجوع", "Index")
+        </div>
+    }
+</div>

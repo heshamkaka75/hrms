@@ -1,0 +1,51 @@
+﻿@model IEnumerable<heshamhrms.Models.Jobs>
+
+@{
+    ViewBag.Title = "الوظائف";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>الوظائف</h2>
+
+<p>
+    @Html.ActionLink("وظيفة جديدة", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.job_title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job_details)
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.job_title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Job_details)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.job_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.job_id })
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.job_id })
+                </td>
+            </tr>
+        }
+
+</table>

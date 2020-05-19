@@ -1,0 +1,73 @@
+<add name="hrmsEntities" connectionString="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=HESHAM\MAIN;initial catalog=hrms;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+*****************
+table-striped 
+<thead class="tablehead">
+
+ [Display(Name = "«·Ã‰”")]
+[DataType(DataType.Date)]
+      
+<label class="control-label col-md-2" for="Edit_by">«œŒ· »Ê«”ÿ…</label>
+
+.OrderBy(item => item.Employee_name)
+
+<input class="text-box single-line" data-val="true" data-val-number="The field «œŒ· »Ê«”ÿ… must be a number." id="edit_by" name="edit_by" type="text" value="@Session["userid"] "  readonly/>
+<input class="text-box single-line" data-val="true" data-val-date="The field  «—ÌŒ «·⁄„·Ì… must be a date." id="date_time" name="date_time" type="text" value="@DateTime.Today" readonly/>
+@Html.DisplayFor(model => model.Date_time)
+<a href="~/Courses/Create" class="btn btn-primary" role="button">ÃœÌœ <i class="fa fa-plus"></i></a>
+
+<a href="~/Courses/Create" class="btn btn-info" role="button">«·—ÃÊ⁄ «·Ì «·ﬁ«∆„… «·—∆Ì”Ì… <i class="fa fa-home"></i></a>
+
+user + loginerr
+db.leave per + leave_loc
+
+String.Empty new { @class = "form-control select2" })
+
+<script>    
+    $(function () {
+        $("#User_auth_id").select2();
+    });
+</script>
+
+@Html.DropDownList("User_auth_id", null, String.Empty, new { @class = "form-control mySelect2" })
+
+table-striped 
+<thead class="tablehead">
+
+ [Display(Name = "«·Ã‰”")]
+[DataType(DataType.Date)]
+      
+<label class="control-label col-md-2" for="Edit_by">«œŒ· »Ê«”ÿ…</label>
+
+.OrderBy(item => item.Employee_name)
+
+<input class="text-box single-line" data-val="true" data-val-number="The field «œŒ· »Ê«”ÿ… must be a number." id="edit_by" name="edit_by" type="text" value="@Session["userid"] "  readonly/>
+<input class="text-box single-line" data-val="true" data-val-date="The field  «—ÌŒ «·⁄„·Ì… must be a date." id="date_time" name="date_time" type="text" value="@DateTime.Today" readonly/>
+@Html.DisplayFor(model => model.Date_time)
+<a href="~/Courses/Create" class="btn btn-primary" role="button">ÃœÌœ <i class="fa fa-plus"></i></a>
+
+<a href="~/Courses/Create" class="btn btn-info" role="button">«·—ÃÊ⁄ «·Ì «·ﬁ«∆„… «·—∆Ì”Ì… <i class="fa fa-home"></i></a>
+
+<div class="col-md-10 formc2">
+
+<script>    
+    $(function () {
+        $("#User_auth_id").select2();
+    });
+</script>
+
+@Html.DropDownList("User_auth_id", null, String.Empty, new { @class = "form-control mySelect2" })
+
+, null, String.Empty, new { @class = "form-control mySelect2" })
+	     <th> ⁄œÌ·</th>
+            <th> ›«’Ì·</th>
+            <th>Õ–›</th>
+
+
+    try { if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+       }
+    catch { Response.Redirect("~/Login/home"); }
+        
+return HttpNotFound();
+return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+return Redirect("~/Login/Notfound");

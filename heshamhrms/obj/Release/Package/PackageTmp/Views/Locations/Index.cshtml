@@ -1,0 +1,63 @@
+﻿@model IEnumerable<heshamhrms.Models.Locations>
+
+@{
+    ViewBag.Title = "المواقع";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>المواقع</h2>
+
+<p>
+    @Html.ActionLink("إنشاء موقع", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Location_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone_no)
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model.OrderBy(item => item.Location_name))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.city)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone_no)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.Location_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.Location_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.Location_id })
+                </td>
+            </tr>
+        }
+
+</table>

@@ -1,0 +1,27 @@
+﻿@model heshamhrms.Models.Genders
+
+@{
+    ViewBag.Title = "تفاصيل جنس";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل جنس</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.Gender_id }) |
+    @Html.ActionLink("الرجوع للقائمة", "Index")
+</p>

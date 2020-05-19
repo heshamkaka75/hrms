@@ -1,0 +1,64 @@
+﻿@model IEnumerable<heshamhrms.Models.Leave_permission>
+
+@{
+    ViewBag.Title = "إذن الخروج";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>إذن الخروج</h2>
+
+<p>
+    @Html.ActionLink("إذن  جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.Employee_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.leave_loc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.leave_Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Leave_Reason)
+            </th>
+            
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employees.Employee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.leave_loc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.leave_Duration) 
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Leave_Reason)
+                </td>
+                
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.leave_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.leave_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.leave_id })
+                </td>
+            </tr>
+        }
+
+</table>

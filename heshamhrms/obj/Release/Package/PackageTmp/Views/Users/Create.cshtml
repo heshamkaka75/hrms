@@ -1,0 +1,82 @@
+﻿@model heshamhrms.Models.Users
+@{
+    ViewBag.Title = "إنشاء مستخدم";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+}
+<h2>إنشاء مستخدم</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.User_name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.User_name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.User_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.password, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.password)
+                @Html.ValidationMessageFor(model => model.password)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="fullname">الاسم بالكامل</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fullname)
+                @Html.ValidationMessageFor(model => model.fullname)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="User_auth_id">الصلاحية</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("User_auth_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.User_auth_id)
+            </div>
+        </div>
+
+
+
+      
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="إنشاء مستخدم" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("الرجوع الي القائمة", "Index")
+</div>
+
+
+
+
+<script>
+    
+    $(function () {
+        $("#User_auth_id").select2();
+    });
+    
+</script>

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<heshamhrms.Models.Employees>
+
+@{
+    ViewBag.Title = "الموظفين";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>الموظفين</h2>
+
+<p>
+    <a href="~/Employees/Create" class="btn btn-primary" role="button">موظف جديد <i class="fa fa-plus"></i></a>
+</p>
+
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                الموظف
+            </th>
+           
+            <th>
+                الادارة/الفرع
+            </th>
+            <th>
+                الوظيفة
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genders.Gender_name)
+            </th>
+            
+            
+            
+            
+           
+            
+            <th>تفاصيل</th>
+            <th>تعديل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model.OrderBy(item => item.Employee_name))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_id)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departments.Department_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Jobs.job_title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genders.Gender_name)
+                </td>
+
+                
+                <td>
+
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.Employee_id })
+
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.Employee_id })
+                </td>              
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.Employee_id })
+                </td>
+            </tr>
+        }
+
+</table>

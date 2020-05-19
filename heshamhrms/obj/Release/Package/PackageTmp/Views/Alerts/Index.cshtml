@@ -1,0 +1,59 @@
+﻿@model IEnumerable<heshamhrms.Models.alerts>
+
+@{
+    ViewBag.Title = "إنذارات";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>إنذارات</h2>
+
+<p>
+    @Html.ActionLink("جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.alert_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.Employee_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.alert_Reason)
+            </th>
+            
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.alert_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employees.Employee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.alert_Reason)
+                </td>
+                
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.alert_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.alert_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.alert_id })
+                </td>
+            </tr>
+        }
+
+</table>

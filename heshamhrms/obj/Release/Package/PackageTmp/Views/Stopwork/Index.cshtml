@@ -1,0 +1,71 @@
+﻿@model IEnumerable<heshamhrms.Models.stop_working>
+
+@{
+    ViewBag.Title = "إيقاف عن العمل";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>إيقاف عن العمل</h2>
+
+<p>
+    @Html.ActionLink("جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.Employee_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stop_working_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stop_working_Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_time)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Users.User_name)
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employees.Employee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.stop_working_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.stop_working_Reason)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_time)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users.User_name)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.stop_working_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.stop_working_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.stop_working_id })
+                </td>
+            </tr>
+        }
+
+</table>

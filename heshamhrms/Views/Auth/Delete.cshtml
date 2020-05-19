@@ -1,0 +1,40 @@
+﻿@model heshamhrms.Models.Authorities
+
+@{
+    ViewBag.Title = "حذف الصلاحية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+
+}
+
+<h2>حذف الصلاحية</h2>
+
+<h3>هل تريد حذف هذه الصلاحية ؟</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.auth_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.auth_name).
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف الصلاحية" class="btn btn-danger" /> |
+            @Html.ActionLink("رجوع", "Index")
+        </div>
+    }
+</div>

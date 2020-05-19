@@ -1,0 +1,27 @@
+﻿@model heshamhrms.Models.ranks
+
+@{
+    ViewBag.Title = "تفاصيل درجة وظيفية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل درجة وظيفية</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.rank_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rank_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.rank_id }) |
+    @Html.ActionLink("الرجوع الي القائمة", "Index")
+</p>

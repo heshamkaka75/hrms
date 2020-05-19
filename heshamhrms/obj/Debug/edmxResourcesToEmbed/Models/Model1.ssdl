@@ -1,0 +1,1334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hrmsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="alerts">
+    <Key>
+      <PropertyRef Name="alert_id" />
+    </Key>
+    <Property Name="alert_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Alert_Employee_id" Type="int" />
+    <Property Name="alert_date" Type="date" />
+    <Property Name="alert_Reason" Type="nvarchar" MaxLength="50" />
+    <Property Name="Edit_by" Type="int" />
+    <Property Name="Date_time" Type="date" />
+  </EntityType>
+  <EntityType Name="Authorities">
+    <Key>
+      <PropertyRef Name="auth_id" />
+    </Key>
+    <Property Name="auth_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="auth_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Certificates">
+    <Key>
+      <PropertyRef Name="Certificate_id" />
+    </Key>
+    <Property Name="Certificate_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Certificate_employee_id" Type="int" />
+    <Property Name="Certificate_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="edit_by" Type="int" />
+    <Property Name="date_time" Type="date" />
+    <Property Name="Certificate_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Certificate_source" Type="nvarchar" MaxLength="50" />
+    <Property Name="Certificate_duration" Type="int" />
+    <Property Name="Certificate_from" Type="date" />
+    <Property Name="Certificate_to" Type="date" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="Country_id" />
+    </Key>
+    <Property Name="Country_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="Course_id" />
+    </Key>
+    <Property Name="Course_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course_Course_name_id" Type="int" />
+    <Property Name="Course_Employee_id" Type="int" />
+    <Property Name="Course_location" Type="nvarchar" MaxLength="50" />
+    <Property Name="Course_start_date" Type="date" />
+    <Property Name="Course_end_date" Type="date" />
+    <Property Name="Support_from" Type="nvarchar" MaxLength="50" />
+    <Property Name="Edit_by" Type="int" />
+    <Property Name="Date_time" Type="date" />
+  </EntityType>
+  <EntityType Name="Courses_name">
+    <Key>
+      <PropertyRef Name="Course_name_id" />
+    </Key>
+    <Property Name="Course_name_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="Department_id" />
+    </Key>
+    <Property Name="Department_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Manger_id" Type="int" />
+    <Property Name="Department_Location_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Employee_id" />
+    </Key>
+    <Property Name="Employee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mother_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_of_birth" Type="date" />
+    <Property Name="Employee_Country_id" Type="int" />
+    <Property Name="National_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_Religion_id" Type="int" />
+    <Property Name="Employee_Marital_Status_id" Type="int" />
+    <Property Name="Employee_Qualification_id" Type="int" />
+    <Property Name="Employee_Qualification_university" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_Qualification_date" Type="date" />
+    <Property Name="Employee_high_Qualification_id" Type="int" />
+    <Property Name="Employee_high_Qualification_university" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_high_Qualification_date" Type="date" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hire_date" Type="date" />
+    <Property Name="Employee_national_services_status_id" Type="int" />
+    <Property Name="Experiences_years" Type="int" />
+    <Property Name="Employee_Job_id" Type="int" />
+    <Property Name="Employee_Rank_id" Type="int" />
+    <Property Name="Employee_Department_id" Type="int" />
+    <Property Name="Employee_fingerprint_id" Type="int" />
+    <Property Name="Employee_gender_id" Type="int" />
+  </EntityType>
+  <EntityType Name="fingerprints">
+    <Key>
+      <PropertyRef Name="fingerprint_id" />
+    </Key>
+    <Property Name="fingerprint_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_id" Type="int" />
+    <Property Name="national_ser_id" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Genders">
+    <Key>
+      <PropertyRef Name="Gender_id" />
+    </Key>
+    <Property Name="Gender_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gender_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Hr_table_index">
+    <Key>
+      <PropertyRef Name="table_id" />
+    </Key>
+    <Property Name="table_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="table_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="table_desc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Jobs">
+    <Key>
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="job_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="job_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Job_details" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Leave_permission">
+    <Key>
+      <PropertyRef Name="leave_id" />
+    </Key>
+    <Property Name="leave_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="leave_Employee_id" Type="int" />
+    <Property Name="leave_Duration" Type="int" />
+    <Property Name="Leave_Reason" Type="nvarchar" MaxLength="50" />
+    <Property Name="Edit_by" Type="int" />
+    <Property Name="Date_time" Type="date" />
+    <Property Name="leave_loc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="Location_id" />
+    </Key>
+    <Property Name="Location_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Location_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone_no" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Manifestations">
+    <Key>
+      <PropertyRef Name="Manifestation_id" />
+    </Key>
+    <Property Name="Manifestation_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Manifestation_Employee_id" Type="int" />
+    <Property Name="Manifestation_date" Type="date" />
+    <Property Name="Manifestation_Reason" Type="nvarchar" MaxLength="50" />
+    <Property Name="Edit_by" Type="int" />
+    <Property Name="Date_time" Type="date" />
+  </EntityType>
+  <EntityType Name="Marital_Status">
+    <Key>
+      <PropertyRef Name="Marital_Status_id" />
+    </Key>
+    <Property Name="Marital_Status_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marital_Status_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="national_services">
+    <Key>
+      <PropertyRef Name="national_service_id" />
+    </Key>
+    <Property Name="national_service_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="national_service_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_of_birth" Type="date" />
+    <Property Name="Country_id" Type="int" />
+    <Property Name="National_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="National_services_Religion_id" Type="int" />
+    <Property Name="National_services_Marital_Status_id" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="national_service_Qualification_id" Type="int" />
+    <Property Name="national_service_Qualification_university" Type="nvarchar" MaxLength="50" />
+    <Property Name="national_service_Qualification_date" Type="date" />
+    <Property Name="start_date" Type="date" />
+    <Property Name="End_date" Type="date" />
+    <Property Name="Department_id" Type="int" />
+    <Property Name="fingerprint_id" Type="int" />
+  </EntityType>
+  <EntityType Name="National_services_status">
+    <Key>
+      <PropertyRef Name="National_services_status_id" />
+    </Key>
+    <Property Name="National_services_status_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="National_services_status_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Out_jobs">
+    <Key>
+      <PropertyRef Name="Out_job_id" />
+    </Key>
+    <Property Name="Out_job_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Out_job_employee_id" Type="int" />
+    <Property Name="Out_job_location_id" Type="int" />
+    <Property Name="Out_job_date" Type="date" />
+    <Property Name="Out_job_reason" Type="nvarchar" MaxLength="50" />
+    <Property Name="Out_job_duration" Type="int" />
+    <Property Name="Edit_by" Type="int" />
+    <Property Name="Date_time" Type="date" />
+  </EntityType>
+  <EntityType Name="Qualifications">
+    <Key>
+      <PropertyRef Name="Qualification_id" />
+    </Key>
+    <Property Name="Qualification_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Qualification_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ranks">
+    <Key>
+      <PropertyRef Name="rank_id" />
+    </Key>
+    <Property Name="rank_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rank_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Religions">
+    <Key>
+      <PropertyRef Name="Religion_id" />
+    </Key>
+    <Property Name="Religion_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Religion_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Resigns">
+    <Key>
+      <PropertyRef Name="Resign_id" />
+    </Key>
+    <Property Name="Resign_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Resign_Employee_id" Type="int" />
+    <Property Name="Resign_date" Type="date" />
+    <Property Name="Resign_Reason" Type="nvarchar" MaxLength="50" />
+    <Property Name="Edit_by" Type="int" />
+    <Property Name="Date_time" Type="date" />
+  </EntityType>
+  <EntityType Name="sacks">
+    <Key>
+      <PropertyRef Name="sack_id" />
+    </Key>
+    <Property Name="sack_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sack_employee_id" Type="int" />
+    <Property Name="sack_data" Type="date" />
+    <Property Name="Sack_Reason" Type="nvarchar" MaxLength="50" />
+    <Property Name="Edit_by" Type="int" />
+    <Property Name="Date_time" Type="date" />
+  </EntityType>
+  <EntityType Name="stop_working">
+    <Key>
+      <PropertyRef Name="stop_working_id" />
+    </Key>
+    <Property Name="stop_working_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="stop_working_Employee_id" Type="int" />
+    <Property Name="stop_working_date" Type="date" />
+    <Property Name="stop_working_Reason" Type="nvarchar" MaxLength="50" />
+    <Property Name="Edit_by" Type="int" />
+    <Property Name="Date_time" Type="date" />
+  </EntityType>
+  <EntityType Name="trainings">
+    <Key>
+      <PropertyRef Name="training_id" />
+    </Key>
+    <Property Name="training_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="training_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_of_birth" Type="date" />
+    <Property Name="Country_id" Type="int" />
+    <Property Name="National_no" Type="int" />
+    <Property Name="Phone_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="training_Religion_id" Type="int" />
+    <Property Name="training_Marital_Status_id" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="training_Qualification_id" Type="int" />
+    <Property Name="training_Qualification_university" Type="nvarchar" MaxLength="50" />
+    <Property Name="training_Qualification_date" Type="date" />
+    <Property Name="Start_date" Type="date" />
+    <Property Name="end_date" Type="date" />
+    <Property Name="Department_id" Type="int" />
+    <Property Name="fingerprint_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Transfers">
+    <Key>
+      <PropertyRef Name="Transfer_id" />
+    </Key>
+    <Property Name="Transfer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Transfer_employee_id" Type="int" />
+    <Property Name="Transfer_from_department_id" Type="int" />
+    <Property Name="Transfer_to_department_id" Type="int" />
+    <Property Name="Edit_by" Type="int" />
+    <Property Name="Date_time" Type="date" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="User_id" />
+    </Key>
+    <Property Name="User_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="50" />
+    <Property Name="User_auth_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Vacation_Balances">
+    <Key>
+      <PropertyRef Name="Vacation_Balances_id" />
+    </Key>
+    <Property Name="Vacation_Balances_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Vb_vt_id" Type="int" />
+    <Property Name="vb_emp_id" Type="int" />
+    <Property Name="vb_total" Type="int" />
+    <Property Name="edit_by" Type="int" />
+    <Property Name="date_time" Type="date" />
+  </EntityType>
+  <EntityType Name="Vacations">
+    <Key>
+      <PropertyRef Name="Vacation_id" />
+    </Key>
+    <Property Name="Vacation_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Vacation_employee_name" Type="int" />
+    <Property Name="Vacation_vt_id" Type="int" />
+    <Property Name="Vacation_depatrments_id" Type="int" />
+    <Property Name="Vacation_duration" Type="int" />
+    <Property Name="Vacation_start_date" Type="date" />
+    <Property Name="Vacation_end_date" Type="date" />
+    <Property Name="Vacation_Reason" Type="nvarchar" MaxLength="50" />
+    <Property Name="Edit_by" Type="int" />
+    <Property Name="Date_time" Type="date" />
+  </EntityType>
+  <EntityType Name="Vacations_type">
+    <Key>
+      <PropertyRef Name="Vacation_type_id" />
+    </Key>
+    <Property Name="Vacation_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Vacation_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_alerts_edit">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="alerts" Type="Self.alerts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="alerts">
+        <PropertyRef Name="Edit_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_alerts_emp">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="alerts" Type="Self.alerts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_id" />
+      </Principal>
+      <Dependent Role="alerts">
+        <PropertyRef Name="Alert_Employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Certificates_edit">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Certificates" Type="Self.Certificates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Certificates">
+        <PropertyRef Name="edit_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Certificates_emp">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Certificates" Type="Self.Certificates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_id" />
+      </Principal>
+      <Dependent Role="Certificates">
+        <PropertyRef Name="Certificate_employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_cou_name">
+    <End Role="Courses_name" Type="Self.Courses_name" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses_name">
+        <PropertyRef Name="Course_name_id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="Course_Course_name_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_edit_by">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="Edit_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_emp">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="Course_Employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Departments_location">
+    <End Role="Locations" Type="Self.Locations" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="Location_id" />
+      </Principal>
+      <Dependent Role="Departments">
+        <PropertyRef Name="Department_Location_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_coun">
+    <End Role="Countries" Type="Self.Countries" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Country_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employee_Country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_dep">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Department_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employee_Department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_finger">
+    <End Role="fingerprints" Type="Self.fingerprints" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fingerprints">
+        <PropertyRef Name="fingerprint_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employee_fingerprint_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_gender">
+    <End Role="Genders" Type="Self.Genders" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genders">
+        <PropertyRef Name="Gender_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employee_gender_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_hig_qul">
+    <End Role="Qualifications" Type="Self.Qualifications" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Qualifications">
+        <PropertyRef Name="Qualification_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employee_high_Qualification_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_job">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="job_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employee_Job_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_marital_status">
+    <End Role="Marital_Status" Type="Self.Marital_Status" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marital_Status">
+        <PropertyRef Name="Marital_Status_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employee_Marital_Status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_n_s_s">
+    <End Role="National_services_status" Type="Self.National_services_status" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="National_services_status">
+        <PropertyRef Name="National_services_status_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employee_national_services_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_qualif">
+    <End Role="Qualifications" Type="Self.Qualifications" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Qualifications">
+        <PropertyRef Name="Qualification_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employee_Qualification_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_rank">
+    <End Role="ranks" Type="Self.ranks" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ranks">
+        <PropertyRef Name="rank_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employee_Rank_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_relgin">
+    <End Role="Religions" Type="Self.Religions" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Religions">
+        <PropertyRef Name="Religion_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employee_Religion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Leave_permission_edit">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Leave_permission" Type="Self.Leave_permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Leave_permission">
+        <PropertyRef Name="Edit_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Leave_permission_emp">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Leave_permission" Type="Self.Leave_permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_id" />
+      </Principal>
+      <Dependent Role="Leave_permission">
+        <PropertyRef Name="leave_Employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Manifestations_edit_by">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Manifestations" Type="Self.Manifestations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Manifestations">
+        <PropertyRef Name="Edit_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Manifestations_emp">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Manifestations" Type="Self.Manifestations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_id" />
+      </Principal>
+      <Dependent Role="Manifestations">
+        <PropertyRef Name="Manifestation_Employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_national_services_countri">
+    <End Role="Countries" Type="Self.Countries" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="national_services" Type="Self.national_services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Country_id" />
+      </Principal>
+      <Dependent Role="national_services">
+        <PropertyRef Name="Country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_national_services_dep">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="national_services" Type="Self.national_services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Department_id" />
+      </Principal>
+      <Dependent Role="national_services">
+        <PropertyRef Name="Department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_national_services_finger">
+    <End Role="fingerprints" Type="Self.fingerprints" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="national_services" Type="Self.national_services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fingerprints">
+        <PropertyRef Name="fingerprint_id" />
+      </Principal>
+      <Dependent Role="national_services">
+        <PropertyRef Name="fingerprint_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_national_services_marital_status">
+    <End Role="Marital_Status" Type="Self.Marital_Status" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="national_services" Type="Self.national_services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marital_Status">
+        <PropertyRef Name="Marital_Status_id" />
+      </Principal>
+      <Dependent Role="national_services">
+        <PropertyRef Name="National_services_Marital_Status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_national_services_qualifaciot">
+    <End Role="Qualifications" Type="Self.Qualifications" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="national_services" Type="Self.national_services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Qualifications">
+        <PropertyRef Name="Qualification_id" />
+      </Principal>
+      <Dependent Role="national_services">
+        <PropertyRef Name="national_service_Qualification_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_national_services_relgion">
+    <End Role="Religions" Type="Self.Religions" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="national_services" Type="Self.national_services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Religions">
+        <PropertyRef Name="Religion_id" />
+      </Principal>
+      <Dependent Role="national_services">
+        <PropertyRef Name="National_services_Religion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Out_jobs_edit_by">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Out_jobs" Type="Self.Out_jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Out_jobs">
+        <PropertyRef Name="Edit_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Out_jobs_emp">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Out_jobs" Type="Self.Out_jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_id" />
+      </Principal>
+      <Dependent Role="Out_jobs">
+        <PropertyRef Name="Out_job_employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Out_jobs_loc">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Out_jobs" Type="Self.Out_jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Department_id" />
+      </Principal>
+      <Dependent Role="Out_jobs">
+        <PropertyRef Name="Out_job_location_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resigns_edit">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Resigns" Type="Self.Resigns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Resigns">
+        <PropertyRef Name="Edit_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resigns_emp">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Resigns" Type="Self.Resigns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_id" />
+      </Principal>
+      <Dependent Role="Resigns">
+        <PropertyRef Name="Resign_Employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sacks_edit">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sacks" Type="Self.sacks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="sacks">
+        <PropertyRef Name="Edit_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sacks_emp">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sacks" Type="Self.sacks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_id" />
+      </Principal>
+      <Dependent Role="sacks">
+        <PropertyRef Name="sack_employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stop_working_edit_by">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="stop_working" Type="Self.stop_working" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="stop_working">
+        <PropertyRef Name="Edit_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stop_working_emp">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="stop_working" Type="Self.stop_working" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_id" />
+      </Principal>
+      <Dependent Role="stop_working">
+        <PropertyRef Name="stop_working_Employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_trainings_countery">
+    <End Role="Countries" Type="Self.Countries" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="trainings" Type="Self.trainings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Country_id" />
+      </Principal>
+      <Dependent Role="trainings">
+        <PropertyRef Name="Country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_trainings_dep">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="trainings" Type="Self.trainings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Department_id" />
+      </Principal>
+      <Dependent Role="trainings">
+        <PropertyRef Name="Department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_trainings_marital_status">
+    <End Role="Marital_Status" Type="Self.Marital_Status" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="trainings" Type="Self.trainings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marital_Status">
+        <PropertyRef Name="Marital_Status_id" />
+      </Principal>
+      <Dependent Role="trainings">
+        <PropertyRef Name="training_Marital_Status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_trainings_qualifacton">
+    <End Role="Qualifications" Type="Self.Qualifications" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="trainings" Type="Self.trainings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Qualifications">
+        <PropertyRef Name="Qualification_id" />
+      </Principal>
+      <Dependent Role="trainings">
+        <PropertyRef Name="training_Qualification_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_trainings_relgion">
+    <End Role="Religions" Type="Self.Religions" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="trainings" Type="Self.trainings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Religions">
+        <PropertyRef Name="Religion_id" />
+      </Principal>
+      <Dependent Role="trainings">
+        <PropertyRef Name="training_Religion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transfers_edit">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Transfers" Type="Self.Transfers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Transfers">
+        <PropertyRef Name="Edit_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transfers_emp">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Transfers" Type="Self.Transfers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_id" />
+      </Principal>
+      <Dependent Role="Transfers">
+        <PropertyRef Name="Transfer_employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transfers_from_dep">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+    <End Role="Transfers" Type="Self.Transfers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Department_id" />
+      </Principal>
+      <Dependent Role="Transfers">
+        <PropertyRef Name="Transfer_from_department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transfers_to_dep">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+    <End Role="Transfers" Type="Self.Transfers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Department_id" />
+      </Principal>
+      <Dependent Role="Transfers">
+        <PropertyRef Name="Transfer_to_department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_auth">
+    <End Role="Authorities" Type="Self.Authorities" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authorities">
+        <PropertyRef Name="auth_id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="User_auth_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacation_Balances_emp_if">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Vacation_Balances" Type="Self.Vacation_Balances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_id" />
+      </Principal>
+      <Dependent Role="Vacation_Balances">
+        <PropertyRef Name="vb_emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacation_Balances_Vt_id">
+    <End Role="Vacations_type" Type="Self.Vacations_type" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Vacation_Balances" Type="Self.Vacation_Balances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vacations_type">
+        <PropertyRef Name="Vacation_type_id" />
+      </Principal>
+      <Dependent Role="Vacation_Balances">
+        <PropertyRef Name="Vb_vt_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_dep">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Vacations" Type="Self.Vacations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Department_id" />
+      </Principal>
+      <Dependent Role="Vacations">
+        <PropertyRef Name="Vacation_depatrments_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_edit_by">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Vacations" Type="Self.Vacations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Vacations">
+        <PropertyRef Name="Edit_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_emp">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Vacations" Type="Self.Vacations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_id" />
+      </Principal>
+      <Dependent Role="Vacations">
+        <PropertyRef Name="Vacation_employee_name" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_Vt_id">
+    <End Role="Vacations_type" Type="Self.Vacations_type" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Vacations" Type="Self.Vacations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vacations_type">
+        <PropertyRef Name="Vacation_type_id" />
+      </Principal>
+      <Dependent Role="Vacations">
+        <PropertyRef Name="Vacation_vt_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="hrmsModelStoreContainer">
+    <EntitySet Name="alerts" EntityType="Self.alerts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Authorities" EntityType="Self.Authorities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Certificates" EntityType="Self.Certificates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Courses_name" EntityType="Self.Courses_name" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fingerprints" EntityType="Self.fingerprints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genders" EntityType="Self.Genders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hr_table_index" EntityType="Self.Hr_table_index" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Leave_permission" EntityType="Self.Leave_permission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manifestations" EntityType="Self.Manifestations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marital_Status" EntityType="Self.Marital_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="national_services" EntityType="Self.national_services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="National_services_status" EntityType="Self.National_services_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Out_jobs" EntityType="Self.Out_jobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Qualifications" EntityType="Self.Qualifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ranks" EntityType="Self.ranks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Religions" EntityType="Self.Religions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Resigns" EntityType="Self.Resigns" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sacks" EntityType="Self.sacks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stop_working" EntityType="Self.stop_working" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="trainings" EntityType="Self.trainings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transfers" EntityType="Self.Transfers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vacation_Balances" EntityType="Self.Vacation_Balances" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vacations" EntityType="Self.Vacations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vacations_type" EntityType="Self.Vacations_type" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_alerts_edit" Association="Self.FK_alerts_edit">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="alerts" EntitySet="alerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_alerts_emp" Association="Self.FK_alerts_emp">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="alerts" EntitySet="alerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Certificates_edit" Association="Self.FK_Certificates_edit">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Certificates" EntitySet="Certificates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Certificates_emp" Association="Self.FK_Certificates_emp">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Certificates" EntitySet="Certificates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_cou_name" Association="Self.FK_Courses_cou_name">
+      <End Role="Courses_name" EntitySet="Courses_name" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_edit_by" Association="Self.FK_Courses_edit_by">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_emp" Association="Self.FK_Courses_emp">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Departments_location" Association="Self.FK_Departments_location">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="Departments" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_coun" Association="Self.FK_Employees_coun">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_dep" Association="Self.FK_Employees_dep">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_finger" Association="Self.FK_Employees_finger">
+      <End Role="fingerprints" EntitySet="fingerprints" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_gender" Association="Self.FK_Employees_gender">
+      <End Role="Genders" EntitySet="Genders" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_hig_qul" Association="Self.FK_Employees_hig_qul">
+      <End Role="Qualifications" EntitySet="Qualifications" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_job" Association="Self.FK_Employees_job">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_marital_status" Association="Self.FK_Employees_marital_status">
+      <End Role="Marital_Status" EntitySet="Marital_Status" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_n_s_s" Association="Self.FK_Employees_n_s_s">
+      <End Role="National_services_status" EntitySet="National_services_status" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_qualif" Association="Self.FK_Employees_qualif">
+      <End Role="Qualifications" EntitySet="Qualifications" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_rank" Association="Self.FK_Employees_rank">
+      <End Role="ranks" EntitySet="ranks" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_relgin" Association="Self.FK_Employees_relgin">
+      <End Role="Religions" EntitySet="Religions" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Leave_permission_edit" Association="Self.FK_Leave_permission_edit">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Leave_permission" EntitySet="Leave_permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Leave_permission_emp" Association="Self.FK_Leave_permission_emp">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Leave_permission" EntitySet="Leave_permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Manifestations_edit_by" Association="Self.FK_Manifestations_edit_by">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Manifestations" EntitySet="Manifestations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Manifestations_emp" Association="Self.FK_Manifestations_emp">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Manifestations" EntitySet="Manifestations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_national_services_countri" Association="Self.FK_national_services_countri">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="national_services" EntitySet="national_services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_national_services_dep" Association="Self.FK_national_services_dep">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="national_services" EntitySet="national_services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_national_services_finger" Association="Self.FK_national_services_finger">
+      <End Role="fingerprints" EntitySet="fingerprints" />
+      <End Role="national_services" EntitySet="national_services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_national_services_marital_status" Association="Self.FK_national_services_marital_status">
+      <End Role="Marital_Status" EntitySet="Marital_Status" />
+      <End Role="national_services" EntitySet="national_services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_national_services_qualifaciot" Association="Self.FK_national_services_qualifaciot">
+      <End Role="Qualifications" EntitySet="Qualifications" />
+      <End Role="national_services" EntitySet="national_services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_national_services_relgion" Association="Self.FK_national_services_relgion">
+      <End Role="Religions" EntitySet="Religions" />
+      <End Role="national_services" EntitySet="national_services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Out_jobs_edit_by" Association="Self.FK_Out_jobs_edit_by">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Out_jobs" EntitySet="Out_jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Out_jobs_emp" Association="Self.FK_Out_jobs_emp">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Out_jobs" EntitySet="Out_jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Out_jobs_loc" Association="Self.FK_Out_jobs_loc">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Out_jobs" EntitySet="Out_jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resigns_edit" Association="Self.FK_Resigns_edit">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Resigns" EntitySet="Resigns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resigns_emp" Association="Self.FK_Resigns_emp">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Resigns" EntitySet="Resigns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sacks_edit" Association="Self.FK_sacks_edit">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="sacks" EntitySet="sacks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sacks_emp" Association="Self.FK_sacks_emp">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="sacks" EntitySet="sacks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stop_working_edit_by" Association="Self.FK_stop_working_edit_by">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="stop_working" EntitySet="stop_working" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stop_working_emp" Association="Self.FK_stop_working_emp">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="stop_working" EntitySet="stop_working" />
+    </AssociationSet>
+    <AssociationSet Name="FK_trainings_countery" Association="Self.FK_trainings_countery">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="trainings" EntitySet="trainings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_trainings_dep" Association="Self.FK_trainings_dep">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="trainings" EntitySet="trainings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_trainings_marital_status" Association="Self.FK_trainings_marital_status">
+      <End Role="Marital_Status" EntitySet="Marital_Status" />
+      <End Role="trainings" EntitySet="trainings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_trainings_qualifacton" Association="Self.FK_trainings_qualifacton">
+      <End Role="Qualifications" EntitySet="Qualifications" />
+      <End Role="trainings" EntitySet="trainings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_trainings_relgion" Association="Self.FK_trainings_relgion">
+      <End Role="Religions" EntitySet="Religions" />
+      <End Role="trainings" EntitySet="trainings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transfers_edit" Association="Self.FK_Transfers_edit">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Transfers" EntitySet="Transfers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transfers_emp" Association="Self.FK_Transfers_emp">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Transfers" EntitySet="Transfers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transfers_from_dep" Association="Self.FK_Transfers_from_dep">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Transfers" EntitySet="Transfers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transfers_to_dep" Association="Self.FK_Transfers_to_dep">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Transfers" EntitySet="Transfers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_auth" Association="Self.FK_Users_auth">
+      <End Role="Authorities" EntitySet="Authorities" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacation_Balances_emp_if" Association="Self.FK_Vacation_Balances_emp_if">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Vacation_Balances" EntitySet="Vacation_Balances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacation_Balances_Vt_id" Association="Self.FK_Vacation_Balances_Vt_id">
+      <End Role="Vacations_type" EntitySet="Vacations_type" />
+      <End Role="Vacation_Balances" EntitySet="Vacation_Balances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_dep" Association="Self.FK_Vacations_dep">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Vacations" EntitySet="Vacations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_edit_by" Association="Self.FK_Vacations_edit_by">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Vacations" EntitySet="Vacations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_emp" Association="Self.FK_Vacations_emp">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Vacations" EntitySet="Vacations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_Vt_id" Association="Self.FK_Vacations_Vt_id">
+      <End Role="Vacations_type" EntitySet="Vacations_type" />
+      <End Role="Vacations" EntitySet="Vacations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

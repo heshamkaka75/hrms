@@ -1,0 +1,139 @@
+﻿@model heshamhrms.Models.trainings
+
+@{
+    ViewBag.Title = "تفاصيل متدرب";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل متدرب</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.training_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.training_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_of_birth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_of_birth).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.National_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.National_no).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_no).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.training_Qualification_university)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.training_Qualification_university).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.training_Qualification_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.training_Qualification_date).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Start_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Start_date).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.end_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.end_date).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Countries.Country_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Countries.Country_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departments.Department_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departments.Department_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marital_Status.Marital_Status_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marital_Status.Marital_Status_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Qualifications.Qualification_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qualifications.Qualification_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Religions.Religion_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Religions.Religion_name).
+        </dd>
+
+
+        <dt>
+            
+        </dt>
+
+        <dd>
+            <p>
+                @Html.ActionLink("تعديل", "Edit", new { id = Model.training_id }) |
+                @Html.ActionLink("رجوع", "Index")
+            </p>
+            
+        </dd>
+    </dl>
+</div>

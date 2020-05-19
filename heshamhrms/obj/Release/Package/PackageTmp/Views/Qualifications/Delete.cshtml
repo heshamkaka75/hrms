@@ -1,0 +1,40 @@
+﻿@model heshamhrms.Models.Qualifications
+
+@{
+    ViewBag.Title = "حذف شهاده اكادمية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+}
+
+<h2>حذف شهاده اكادمية</h2>
+
+<h3>هل تريد حذف هذه الشهادة</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Qualification_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qualification_name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف شهاده " class="btn btn-danger" /> |
+            @Html.ActionLink("الرجوع للقائمة", "Index")
+        </div>
+    }
+</div>

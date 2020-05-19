@@ -1,0 +1,106 @@
+﻿@model heshamhrms.Models.Certificates
+
+@{
+    ViewBag.Title = "شهادة جديدة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>شهادة جديدة</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Certificate_employee_id">اسم الموظف</label>
+            <div class="col-md-10 formc2">
+                @Html.DropDownList("Certificate_employee_id", null, String.Empty, new { @class = "form-control mySelect2" })
+                @Html.ValidationMessageFor(model => model.Certificate_employee_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Certificate_name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Certificate_name)
+                @Html.ValidationMessageFor(model => model.Certificate_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Certificate_type, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Certificate_type)
+                @Html.ValidationMessageFor(model => model.Certificate_type)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Certificate_source, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Certificate_source)
+                @Html.ValidationMessageFor(model => model.Certificate_source)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Certificate_duration, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Certificate_duration)
+                @Html.ValidationMessageFor(model => model.Certificate_duration)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Certificate_from, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Certificate_from)
+                @Html.ValidationMessageFor(model => model.Certificate_from)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Certificate_to, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Certificate_to)
+                @Html.ValidationMessageFor(model => model.Certificate_to)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Edit_by">ادخل بواسطة</label>
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-number="The field ادخل بواسطة must be a number." id="edit_by" name="edit_by" type="text" value="@Session["userid"] " readonly />
+                @Html.ValidationMessageFor(model => model.edit_by)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.date_time, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-date="The field تاريخ العملية must be a date." id="date_time" name="date_time" type="text" value="@DateTime.Today" readonly />
+                @Html.ValidationMessageFor(model => model.date_time)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="شهادة جديدة" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("رجوع", "Index")
+</div>
+<script>
+    $(function () {
+        $("#Certificate_employee_id").select2();
+    });
+</script>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<heshamhrms.Models.Departments>
+
+@{
+    ViewBag.Title = "الادارات والفروع";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>الادارات والفروع</h2>
+
+<p>
+    @Html.ActionLink("إنشاء جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                الإدارات والفروع
+            </th>
+            <th>
+                الموقع
+            </th>
+            <th>
+                مدير الفرع
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model.OrderBy(item => item.Department_name))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Locations.Location_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employees1.Employee_name)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.Department_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.Department_id })
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.Department_id })
+                </td>
+            </tr>
+        }
+
+</table>

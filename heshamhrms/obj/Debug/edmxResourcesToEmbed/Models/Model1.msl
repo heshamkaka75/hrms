@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="hrmsModelStoreContainer" CdmEntityContainer="hrmsEntities">
+    <EntitySetMapping Name="alerts">
+      <EntityTypeMapping TypeName="hrmsModel.alerts">
+        <MappingFragment StoreEntitySet="alerts">
+          <ScalarProperty Name="alert_id" ColumnName="alert_id" />
+          <ScalarProperty Name="Alert_Employee_id" ColumnName="Alert_Employee_id" />
+          <ScalarProperty Name="alert_date" ColumnName="alert_date" />
+          <ScalarProperty Name="alert_Reason" ColumnName="alert_Reason" />
+          <ScalarProperty Name="Edit_by" ColumnName="Edit_by" />
+          <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Authorities">
+      <EntityTypeMapping TypeName="hrmsModel.Authorities">
+        <MappingFragment StoreEntitySet="Authorities">
+          <ScalarProperty Name="auth_id" ColumnName="auth_id" />
+          <ScalarProperty Name="auth_name" ColumnName="auth_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Certificates">
+      <EntityTypeMapping TypeName="hrmsModel.Certificates">
+        <MappingFragment StoreEntitySet="Certificates">
+          <ScalarProperty Name="Certificate_id" ColumnName="Certificate_id" />
+          <ScalarProperty Name="Certificate_employee_id" ColumnName="Certificate_employee_id" />
+          <ScalarProperty Name="Certificate_name" ColumnName="Certificate_name" />
+          <ScalarProperty Name="edit_by" ColumnName="edit_by" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="Certificate_type" ColumnName="Certificate_type" />
+          <ScalarProperty Name="Certificate_source" ColumnName="Certificate_source" />
+          <ScalarProperty Name="Certificate_duration" ColumnName="Certificate_duration" />
+          <ScalarProperty Name="Certificate_from" ColumnName="Certificate_from" />
+          <ScalarProperty Name="Certificate_to" ColumnName="Certificate_to" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="hrmsModel.Countries">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="Country_id" ColumnName="Country_id" />
+          <ScalarProperty Name="Country_name" ColumnName="Country_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="hrmsModel.Courses">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="Course_id" ColumnName="Course_id" />
+          <ScalarProperty Name="Course_Course_name_id" ColumnName="Course_Course_name_id" />
+          <ScalarProperty Name="Course_Employee_id" ColumnName="Course_Employee_id" />
+          <ScalarProperty Name="Course_location" ColumnName="Course_location" />
+          <ScalarProperty Name="Course_start_date" ColumnName="Course_start_date" />
+          <ScalarProperty Name="Course_end_date" ColumnName="Course_end_date" />
+          <ScalarProperty Name="Support_from" ColumnName="Support_from" />
+          <ScalarProperty Name="Edit_by" ColumnName="Edit_by" />
+          <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses_name">
+      <EntityTypeMapping TypeName="hrmsModel.Courses_name">
+        <MappingFragment StoreEntitySet="Courses_name">
+          <ScalarProperty Name="Course_name_id" ColumnName="Course_name_id" />
+          <ScalarProperty Name="Course_name" ColumnName="Course_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="hrmsModel.Departments">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="Department_id" ColumnName="Department_id" />
+          <ScalarProperty Name="Department_name" ColumnName="Department_name" />
+          <ScalarProperty Name="Manger_id" ColumnName="Manger_id" />
+          <ScalarProperty Name="Department_Location_id" ColumnName="Department_Location_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="hrmsModel.Employees">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+          <ScalarProperty Name="Employee_name" ColumnName="Employee_name" />
+          <ScalarProperty Name="Mother_name" ColumnName="Mother_name" />
+          <ScalarProperty Name="Date_of_birth" ColumnName="Date_of_birth" />
+          <ScalarProperty Name="Employee_Country_id" ColumnName="Employee_Country_id" />
+          <ScalarProperty Name="National_no" ColumnName="National_no" />
+          <ScalarProperty Name="Phone_no" ColumnName="Phone_no" />
+          <ScalarProperty Name="Employee_Religion_id" ColumnName="Employee_Religion_id" />
+          <ScalarProperty Name="Employee_Marital_Status_id" ColumnName="Employee_Marital_Status_id" />
+          <ScalarProperty Name="Employee_Qualification_id" ColumnName="Employee_Qualification_id" />
+          <ScalarProperty Name="Employee_Qualification_university" ColumnName="Employee_Qualification_university" />
+          <ScalarProperty Name="Employee_Qualification_date" ColumnName="Employee_Qualification_date" />
+          <ScalarProperty Name="Employee_high_Qualification_id" ColumnName="Employee_high_Qualification_id" />
+          <ScalarProperty Name="Employee_high_Qualification_university" ColumnName="Employee_high_Qualification_university" />
+          <ScalarProperty Name="Employee_high_Qualification_date" ColumnName="Employee_high_Qualification_date" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Hire_date" ColumnName="Hire_date" />
+          <ScalarProperty Name="Employee_national_services_status_id" ColumnName="Employee_national_services_status_id" />
+          <ScalarProperty Name="Experiences_years" ColumnName="Experiences_years" />
+          <ScalarProperty Name="Employee_Job_id" ColumnName="Employee_Job_id" />
+          <ScalarProperty Name="Employee_Rank_id" ColumnName="Employee_Rank_id" />
+          <ScalarProperty Name="Employee_Department_id" ColumnName="Employee_Department_id" />
+          <ScalarProperty Name="Employee_fingerprint_id" ColumnName="Employee_fingerprint_id" />
+          <ScalarProperty Name="Employee_gender_id" ColumnName="Employee_gender_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fingerprints">
+      <EntityTypeMapping TypeName="hrmsModel.fingerprints">
+        <MappingFragment StoreEntitySet="fingerprints">
+          <ScalarProperty Name="fingerprint_id" ColumnName="fingerprint_id" />
+          <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+          <ScalarProperty Name="national_ser_id" ColumnName="national_ser_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="hrmsModel.Genders">
+        <MappingFragment StoreEntitySet="Genders">
+          <ScalarProperty Name="Gender_id" ColumnName="Gender_id" />
+          <ScalarProperty Name="Gender_name" ColumnName="Gender_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hr_table_index">
+      <EntityTypeMapping TypeName="hrmsModel.Hr_table_index">
+        <MappingFragment StoreEntitySet="Hr_table_index">
+          <ScalarProperty Name="table_id" ColumnName="table_id" />
+          <ScalarProperty Name="table_name" ColumnName="table_name" />
+          <ScalarProperty Name="table_desc" ColumnName="table_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="hrmsModel.Jobs">
+        <MappingFragment StoreEntitySet="Jobs">
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="job_title" ColumnName="job_title" />
+          <ScalarProperty Name="Job_details" ColumnName="Job_details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Leave_permission">
+      <EntityTypeMapping TypeName="hrmsModel.Leave_permission">
+        <MappingFragment StoreEntitySet="Leave_permission">
+          <ScalarProperty Name="leave_loc" ColumnName="leave_loc" />
+          <ScalarProperty Name="leave_id" ColumnName="leave_id" />
+          <ScalarProperty Name="leave_Employee_id" ColumnName="leave_Employee_id" />
+          <ScalarProperty Name="leave_Duration" ColumnName="leave_Duration" />
+          <ScalarProperty Name="Leave_Reason" ColumnName="Leave_Reason" />
+          <ScalarProperty Name="Edit_by" ColumnName="Edit_by" />
+          <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="hrmsModel.Locations">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="Location_id" ColumnName="Location_id" />
+          <ScalarProperty Name="Location_name" ColumnName="Location_name" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="Phone_no" ColumnName="Phone_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manifestations">
+      <EntityTypeMapping TypeName="hrmsModel.Manifestations">
+        <MappingFragment StoreEntitySet="Manifestations">
+          <ScalarProperty Name="Manifestation_id" ColumnName="Manifestation_id" />
+          <ScalarProperty Name="Manifestation_Employee_id" ColumnName="Manifestation_Employee_id" />
+          <ScalarProperty Name="Manifestation_date" ColumnName="Manifestation_date" />
+          <ScalarProperty Name="Manifestation_Reason" ColumnName="Manifestation_Reason" />
+          <ScalarProperty Name="Edit_by" ColumnName="Edit_by" />
+          <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marital_Status">
+      <EntityTypeMapping TypeName="hrmsModel.Marital_Status">
+        <MappingFragment StoreEntitySet="Marital_Status">
+          <ScalarProperty Name="Marital_Status_id" ColumnName="Marital_Status_id" />
+          <ScalarProperty Name="Marital_Status_name" ColumnName="Marital_Status_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="national_services">
+      <EntityTypeMapping TypeName="hrmsModel.national_services">
+        <MappingFragment StoreEntitySet="national_services">
+          <ScalarProperty Name="national_service_id" ColumnName="national_service_id" />
+          <ScalarProperty Name="national_service_name" ColumnName="national_service_name" />
+          <ScalarProperty Name="Date_of_birth" ColumnName="Date_of_birth" />
+          <ScalarProperty Name="Country_id" ColumnName="Country_id" />
+          <ScalarProperty Name="National_no" ColumnName="National_no" />
+          <ScalarProperty Name="Phone_no" ColumnName="Phone_no" />
+          <ScalarProperty Name="National_services_Religion_id" ColumnName="National_services_Religion_id" />
+          <ScalarProperty Name="National_services_Marital_Status_id" ColumnName="National_services_Marital_Status_id" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="national_service_Qualification_id" ColumnName="national_service_Qualification_id" />
+          <ScalarProperty Name="national_service_Qualification_university" ColumnName="national_service_Qualification_university" />
+          <ScalarProperty Name="national_service_Qualification_date" ColumnName="national_service_Qualification_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="End_date" ColumnName="End_date" />
+          <ScalarProperty Name="Department_id" ColumnName="Department_id" />
+          <ScalarProperty Name="fingerprint_id" ColumnName="fingerprint_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="National_services_status">
+      <EntityTypeMapping TypeName="hrmsModel.National_services_status">
+        <MappingFragment StoreEntitySet="National_services_status">
+          <ScalarProperty Name="National_services_status_id" ColumnName="National_services_status_id" />
+          <ScalarProperty Name="National_services_status_name" ColumnName="National_services_status_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Out_jobs">
+      <EntityTypeMapping TypeName="hrmsModel.Out_jobs">
+        <MappingFragment StoreEntitySet="Out_jobs">
+          <ScalarProperty Name="Out_job_id" ColumnName="Out_job_id" />
+          <ScalarProperty Name="Out_job_employee_id" ColumnName="Out_job_employee_id" />
+          <ScalarProperty Name="Out_job_location_id" ColumnName="Out_job_location_id" />
+          <ScalarProperty Name="Out_job_date" ColumnName="Out_job_date" />
+          <ScalarProperty Name="Out_job_reason" ColumnName="Out_job_reason" />
+          <ScalarProperty Name="Out_job_duration" ColumnName="Out_job_duration" />
+          <ScalarProperty Name="Edit_by" ColumnName="Edit_by" />
+          <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Qualifications">
+      <EntityTypeMapping TypeName="hrmsModel.Qualifications">
+        <MappingFragment StoreEntitySet="Qualifications">
+          <ScalarProperty Name="Qualification_id" ColumnName="Qualification_id" />
+          <ScalarProperty Name="Qualification_name" ColumnName="Qualification_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ranks">
+      <EntityTypeMapping TypeName="hrmsModel.ranks">
+        <MappingFragment StoreEntitySet="ranks">
+          <ScalarProperty Name="rank_id" ColumnName="rank_id" />
+          <ScalarProperty Name="rank_name" ColumnName="rank_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Religions">
+      <EntityTypeMapping TypeName="hrmsModel.Religions">
+        <MappingFragment StoreEntitySet="Religions">
+          <ScalarProperty Name="Religion_id" ColumnName="Religion_id" />
+          <ScalarProperty Name="Religion_name" ColumnName="Religion_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resigns">
+      <EntityTypeMapping TypeName="hrmsModel.Resigns">
+        <MappingFragment StoreEntitySet="Resigns">
+          <ScalarProperty Name="Resign_id" ColumnName="Resign_id" />
+          <ScalarProperty Name="Resign_Employee_id" ColumnName="Resign_Employee_id" />
+          <ScalarProperty Name="Resign_date" ColumnName="Resign_date" />
+          <ScalarProperty Name="Resign_Reason" ColumnName="Resign_Reason" />
+          <ScalarProperty Name="Edit_by" ColumnName="Edit_by" />
+          <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sacks">
+      <EntityTypeMapping TypeName="hrmsModel.sacks">
+        <MappingFragment StoreEntitySet="sacks">
+          <ScalarProperty Name="sack_id" ColumnName="sack_id" />
+          <ScalarProperty Name="sack_employee_id" ColumnName="sack_employee_id" />
+          <ScalarProperty Name="sack_data" ColumnName="sack_data" />
+          <ScalarProperty Name="Sack_Reason" ColumnName="Sack_Reason" />
+          <ScalarProperty Name="Edit_by" ColumnName="Edit_by" />
+          <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stop_working">
+      <EntityTypeMapping TypeName="hrmsModel.stop_working">
+        <MappingFragment StoreEntitySet="stop_working">
+          <ScalarProperty Name="stop_working_id" ColumnName="stop_working_id" />
+          <ScalarProperty Name="stop_working_Employee_id" ColumnName="stop_working_Employee_id" />
+          <ScalarProperty Name="stop_working_date" ColumnName="stop_working_date" />
+          <ScalarProperty Name="stop_working_Reason" ColumnName="stop_working_Reason" />
+          <ScalarProperty Name="Edit_by" ColumnName="Edit_by" />
+          <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trainings">
+      <EntityTypeMapping TypeName="hrmsModel.trainings">
+        <MappingFragment StoreEntitySet="trainings">
+          <ScalarProperty Name="training_id" ColumnName="training_id" />
+          <ScalarProperty Name="training_name" ColumnName="training_name" />
+          <ScalarProperty Name="Date_of_birth" ColumnName="Date_of_birth" />
+          <ScalarProperty Name="Country_id" ColumnName="Country_id" />
+          <ScalarProperty Name="National_no" ColumnName="National_no" />
+          <ScalarProperty Name="Phone_no" ColumnName="Phone_no" />
+          <ScalarProperty Name="training_Religion_id" ColumnName="training_Religion_id" />
+          <ScalarProperty Name="training_Marital_Status_id" ColumnName="training_Marital_Status_id" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="training_Qualification_id" ColumnName="training_Qualification_id" />
+          <ScalarProperty Name="training_Qualification_university" ColumnName="training_Qualification_university" />
+          <ScalarProperty Name="training_Qualification_date" ColumnName="training_Qualification_date" />
+          <ScalarProperty Name="Start_date" ColumnName="Start_date" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="Department_id" ColumnName="Department_id" />
+          <ScalarProperty Name="fingerprint_id" ColumnName="fingerprint_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transfers">
+      <EntityTypeMapping TypeName="hrmsModel.Transfers">
+        <MappingFragment StoreEntitySet="Transfers">
+          <ScalarProperty Name="Transfer_id" ColumnName="Transfer_id" />
+          <ScalarProperty Name="Transfer_employee_id" ColumnName="Transfer_employee_id" />
+          <ScalarProperty Name="Transfer_from_department_id" ColumnName="Transfer_from_department_id" />
+          <ScalarProperty Name="Transfer_to_department_id" ColumnName="Transfer_to_department_id" />
+          <ScalarProperty Name="Edit_by" ColumnName="Edit_by" />
+          <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="hrmsModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="User_name" ColumnName="User_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="User_auth_id" ColumnName="User_auth_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacation_Balances">
+      <EntityTypeMapping TypeName="hrmsModel.Vacation_Balances">
+        <MappingFragment StoreEntitySet="Vacation_Balances">
+          <ScalarProperty Name="Vacation_Balances_id" ColumnName="Vacation_Balances_id" />
+          <ScalarProperty Name="Vb_vt_id" ColumnName="Vb_vt_id" />
+          <ScalarProperty Name="vb_emp_id" ColumnName="vb_emp_id" />
+          <ScalarProperty Name="vb_total" ColumnName="vb_total" />
+          <ScalarProperty Name="edit_by" ColumnName="edit_by" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacations_type">
+      <EntityTypeMapping TypeName="hrmsModel.Vacations_type">
+        <MappingFragment StoreEntitySet="Vacations_type">
+          <ScalarProperty Name="Vacation_type_id" ColumnName="Vacation_type_id" />
+          <ScalarProperty Name="Vacation_name" ColumnName="Vacation_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacations">
+      <EntityTypeMapping TypeName="hrmsModel.Vacations">
+        <MappingFragment StoreEntitySet="Vacations">
+          <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+          <ScalarProperty Name="Edit_by" ColumnName="Edit_by" />
+          <ScalarProperty Name="Vacation_Reason" ColumnName="Vacation_Reason" />
+          <ScalarProperty Name="Vacation_end_date" ColumnName="Vacation_end_date" />
+          <ScalarProperty Name="Vacation_start_date" ColumnName="Vacation_start_date" />
+          <ScalarProperty Name="Vacation_duration" ColumnName="Vacation_duration" />
+          <ScalarProperty Name="Vacation_depatrments_id" ColumnName="Vacation_depatrments_id" />
+          <ScalarProperty Name="Vacation_vt_id" ColumnName="Vacation_vt_id" />
+          <ScalarProperty Name="Vacation_employee_name" ColumnName="Vacation_employee_name" />
+          <ScalarProperty Name="Vacation_id" ColumnName="Vacation_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

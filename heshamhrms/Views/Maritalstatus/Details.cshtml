@@ -1,0 +1,27 @@
+﻿@model heshamhrms.Models.Marital_Status
+
+@{
+    ViewBag.Title = "تفاصيل الحالة الاجتماعية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل الحالة الاجتماعية</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Marital_Status_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marital_Status_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.Marital_Status_id }) |
+    @Html.ActionLink("الرجوع للقائمة", "Index")
+</p>

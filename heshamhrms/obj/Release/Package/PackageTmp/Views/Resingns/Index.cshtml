@@ -1,0 +1,72 @@
+﻿@model IEnumerable<heshamhrms.Models.Resigns>
+
+@{
+    ViewBag.Title = "إستقالات الموظفين";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>إستقالات الموظفين</h2>
+
+<p>
+    @Html.ActionLink("جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Resign_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.Employee_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resign_Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_time)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Users.User_name)
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Resign_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employees.Employee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Resign_Reason)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_time)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users.User_name)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.Resign_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.Resign_id }) 
+                    
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("حذف", "Delete", new { id = item.Resign_id })
+                </td>
+            </tr>
+        }
+
+</table>

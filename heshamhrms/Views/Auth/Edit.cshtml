@@ -1,0 +1,48 @@
+﻿@model heshamhrms.Models.Authorities
+
+@{
+    ViewBag.Title = "تعديل الصلاحية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+
+}
+
+<h2>تعديل الصلاحية</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.auth_id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.auth_name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.auth_name)
+                @Html.ValidationMessageFor(model => model.auth_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="تعديل الصلاحية" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("رجوع", "Index")
+</div>

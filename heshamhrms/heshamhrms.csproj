@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B06E017D-EDD6-4656-8C5D-C80E0937C03E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>heshamhrms</RootNamespace>
+    <AssemblyName>heshamhrms</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\font.css" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\select2.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\index.html" />
+    <Content Include="Global.asax" />
+    <Content Include="images\17.jpg" />
+    <Content Include="images\18.jpg" />
+    <Content Include="images\fb.jpg" />
+    <Content Include="images\fbb.jpg" />
+    <Content Include="images\hri.ico" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="images\n6.jpg" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="fonts\JF-Flat-regular-2.ttf" />
+    <None Include="Properties\PublishProfiles\hrms.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\select2.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AlertsController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\CertificatesController.cs" />
+    <Compile Include="Controllers\CountriesController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\CoursesnameController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\GendersController.cs" />
+    <Compile Include="Controllers\JobsController.cs" />
+    <Compile Include="Controllers\LevpermController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ManifestationsController.cs" />
+    <Compile Include="Controllers\MaritalstatusController.cs" />
+    <Compile Include="Controllers\NatservController.cs" />
+    <Compile Include="Controllers\NssController.cs" />
+    <Compile Include="Controllers\OutjobsController.cs" />
+    <Compile Include="Controllers\QualificationsController.cs" />
+    <Compile Include="Controllers\RanksController.cs" />
+    <Compile Include="Controllers\ReligionsController.cs" />
+    <Compile Include="Controllers\ResingnsController.cs" />
+    <Compile Include="Controllers\SacksController.cs" />
+    <Compile Include="Controllers\StopworkController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\TransfersController.cs" />
+    <Compile Include="Controllers\TriningsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\VacationsController.cs" />
+    <Compile Include="Controllers\VacbalanceController.cs" />
+    <Compile Include="Controllers\VactypeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\alerts.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Authorities.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Certificates.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Countries.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Courses.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Courses_name.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Departments.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employees.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fingerprints.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Genders.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hr_table_index.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Jobs.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Leave_permission.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Locations.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Manifestations.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Marital_Status.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\national_services.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\National_services_status.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Out_jobs.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Qualifications.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ranks.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Religions.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Resigns.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sacks.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stop_working.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\trainings.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Transfers.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vacations.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vacations_type.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vacation_Balances.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\DroidKufi-Regular.ttf" />
+    <Content Include="fonts\DroidNaskh-Bold.ttf" />
+    <Content Include="fonts\DroidNaskh-Regular.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\GE_SS_Two_Bold.eot" />
+    <Content Include="fonts\GE_SS_Two_Bold.otf" />
+    <Content Include="fonts\GE_SS_Two_Bold.woff" />
+    <Content Include="fonts\GE_SS_Two_Light.eot" />
+    <Content Include="fonts\GE_SS_Two_Light.otf" />
+    <Content Include="fonts\GE_SS_Two_Light.woff" />
+    <Content Include="fonts\GE_SS_Two_Medium.eot" />
+    <Content Include="fonts\GE_SS_Two_Medium.otf" />
+    <Content Include="fonts\GE_SS_Two_Medium.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\HelveticaNeueW23-Reg.ttf" />
+    <Content Include="fonts\iconic_stroke.eot" />
+    <Content Include="fonts\TanseekModernProArabic-Bold1.eot" />
+    <Content Include="fonts\TanseekModernProArabic-Bold2.woff" />
+    <Content Include="fonts\TanseekModernProArabic-Bold3.ttf" />
+    <Content Include="fonts\TanseekModernProArabic1.eot" />
+    <Content Include="fonts\TanseekModernProArabic2.woff" />
+    <Content Include="fonts\TanseekModernProArabic3.ttf" />
+    <Content Include="fonts\trado.ttf" />
+    <Content Include="images\Thumbs.db" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Auth\Create.cshtml" />
+    <Content Include="Views\Auth\Delete.cshtml" />
+    <Content Include="Views\Auth\Details.cshtml" />
+    <Content Include="Views\Auth\Edit.cshtml" />
+    <Content Include="Views\Auth\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Jobs\Create.cshtml" />
+    <Content Include="Views\Jobs\Delete.cshtml" />
+    <Content Include="Views\Jobs\Details.cshtml" />
+    <Content Include="Views\Jobs\Edit.cshtml" />
+    <Content Include="Views\Jobs\Index.cshtml" />
+    <Content Include="Views\Ranks\Create.cshtml" />
+    <Content Include="Views\Ranks\Delete.cshtml" />
+    <Content Include="Views\Ranks\Details.cshtml" />
+    <Content Include="Views\Ranks\Edit.cshtml" />
+    <Content Include="Views\Ranks\Index.cshtml" />
+    <Content Include="Views\Countries\Create.cshtml" />
+    <Content Include="Views\Countries\Delete.cshtml" />
+    <Content Include="Views\Countries\Details.cshtml" />
+    <Content Include="Views\Countries\Edit.cshtml" />
+    <Content Include="Views\Countries\Index.cshtml" />
+    <Content Include="Views\Qualifications\Create.cshtml" />
+    <Content Include="Views\Qualifications\Delete.cshtml" />
+    <Content Include="Views\Qualifications\Details.cshtml" />
+    <Content Include="Views\Qualifications\Edit.cshtml" />
+    <Content Include="Views\Qualifications\Index.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Coursesname\Create.cshtml" />
+    <Content Include="Views\Coursesname\Delete.cshtml" />
+    <Content Include="Views\Coursesname\Details.cshtml" />
+    <Content Include="Views\Coursesname\Edit.cshtml" />
+    <Content Include="Views\Coursesname\Index.cshtml" />
+    <Content Include="Views\Religions\Create.cshtml" />
+    <Content Include="Views\Religions\Delete.cshtml" />
+    <Content Include="Views\Religions\Details.cshtml" />
+    <Content Include="Views\Religions\Edit.cshtml" />
+    <Content Include="Views\Religions\Index.cshtml" />
+    <Content Include="Views\Maritalstatus\Create.cshtml" />
+    <Content Include="Views\Maritalstatus\Delete.cshtml" />
+    <Content Include="Views\Maritalstatus\Details.cshtml" />
+    <Content Include="Views\Maritalstatus\Edit.cshtml" />
+    <Content Include="Views\Maritalstatus\Index.cshtml" />
+    <Content Include="Views\Nss\Create.cshtml" />
+    <Content Include="Views\Nss\Delete.cshtml" />
+    <Content Include="Views\Nss\Details.cshtml" />
+    <Content Include="Views\Nss\Edit.cshtml" />
+    <Content Include="Views\Nss\Index.cshtml" />
+    <Content Include="Views\Genders\Create.cshtml" />
+    <Content Include="Views\Genders\Delete.cshtml" />
+    <Content Include="Views\Genders\Details.cshtml" />
+    <Content Include="Views\Genders\Edit.cshtml" />
+    <Content Include="Views\Genders\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Vactype\Create.cshtml" />
+    <Content Include="Views\Vactype\Delete.cshtml" />
+    <Content Include="Views\Vactype\Details.cshtml" />
+    <Content Include="Views\Vactype\Edit.cshtml" />
+    <Content Include="Views\Vactype\Index.cshtml" />
+    <Content Include="Views\Vacbalance\Create.cshtml" />
+    <Content Include="Views\Vacbalance\Delete.cshtml" />
+    <Content Include="Views\Vacbalance\Details.cshtml" />
+    <Content Include="Views\Vacbalance\Edit.cshtml" />
+    <Content Include="Views\Vacbalance\Index.cshtml" />
+    <Content Include="Views\Manifestations\Create.cshtml" />
+    <Content Include="Views\Manifestations\Delete.cshtml" />
+    <Content Include="Views\Manifestations\Details.cshtml" />
+    <Content Include="Views\Manifestations\Edit.cshtml" />
+    <Content Include="Views\Manifestations\Index.cshtml" />
+    <Content Include="Views\Alerts\Create.cshtml" />
+    <Content Include="Views\Alerts\Delete.cshtml" />
+    <Content Include="Views\Alerts\Details.cshtml" />
+    <Content Include="Views\Alerts\Edit.cshtml" />
+    <Content Include="Views\Alerts\Index.cshtml" />
+    <Content Include="Views\Sacks\Create.cshtml" />
+    <Content Include="Views\Sacks\Delete.cshtml" />
+    <Content Include="Views\Sacks\Details.cshtml" />
+    <Content Include="Views\Sacks\Edit.cshtml" />
+    <Content Include="Views\Sacks\Index.cshtml" />
+    <Content Include="Views\Resingns\Create.cshtml" />
+    <Content Include="Views\Resingns\Delete.cshtml" />
+    <Content Include="Views\Resingns\Details.cshtml" />
+    <Content Include="Views\Resingns\Edit.cshtml" />
+    <Content Include="Views\Resingns\Index.cshtml" />
+    <Content Include="Views\Stopwork\Create.cshtml" />
+    <Content Include="Views\Stopwork\Delete.cshtml" />
+    <Content Include="Views\Stopwork\Details.cshtml" />
+    <Content Include="Views\Stopwork\Edit.cshtml" />
+    <Content Include="Views\Stopwork\Index.cshtml" />
+    <Content Include="Views\Trinings\Create.cshtml" />
+    <Content Include="Views\Trinings\Delete.cshtml" />
+    <Content Include="Views\Trinings\Details.cshtml" />
+    <Content Include="Views\Trinings\Edit.cshtml" />
+    <Content Include="Views\Trinings\Index.cshtml" />
+    <Content Include="Views\Natserv\Create.cshtml" />
+    <Content Include="Views\Natserv\Delete.cshtml" />
+    <Content Include="Views\Natserv\Details.cshtml" />
+    <Content Include="Views\Natserv\Edit.cshtml" />
+    <Content Include="Views\Natserv\Index.cshtml" />
+    <Content Include="Views\Outjobs\Create.cshtml" />
+    <Content Include="Views\Outjobs\Delete.cshtml" />
+    <Content Include="Views\Outjobs\Details.cshtml" />
+    <Content Include="Views\Outjobs\Edit.cshtml" />
+    <Content Include="Views\Outjobs\Index.cshtml" />
+    <Content Include="Views\Transfers\Create.cshtml" />
+    <Content Include="Views\Transfers\Delete.cshtml" />
+    <Content Include="Views\Transfers\Details.cshtml" />
+    <Content Include="Views\Transfers\Edit.cshtml" />
+    <Content Include="Views\Transfers\Index.cshtml" />
+    <Content Include="Views\Certificates\Create.cshtml" />
+    <Content Include="Views\Certificates\Delete.cshtml" />
+    <Content Include="Views\Certificates\Details.cshtml" />
+    <Content Include="Views\Certificates\Edit.cshtml" />
+    <Content Include="Views\Certificates\Index.cshtml" />
+    <Content Include="Views\Departments\Create.cshtml" />
+    <Content Include="Views\Departments\Delete.cshtml" />
+    <Content Include="Views\Departments\Details.cshtml" />
+    <Content Include="Views\Departments\Edit.cshtml" />
+    <Content Include="Views\Departments\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Home.cshtml" />
+    <Content Include="Views\Vacations\Create.cshtml" />
+    <Content Include="Views\Vacations\Delete.cshtml" />
+    <Content Include="Views\Vacations\Details.cshtml" />
+    <Content Include="Views\Vacations\Edit.cshtml" />
+    <Content Include="Views\Vacations\Index.cshtml" />
+    <Content Include="Views\Vacations\Emp.cshtml" />
+    <Content Include="Views\Vacations\Add.cshtml" />
+    <Content Include="Views\Vacations\Empdt.cshtml" />
+    <Content Include="Views\Courses\Create.cshtml" />
+    <Content Include="Views\Courses\Delete.cshtml" />
+    <Content Include="Views\Courses\Details.cshtml" />
+    <Content Include="Views\Courses\Edit.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
+    <Content Include="Views\Login\Notauth.cshtml" />
+    <Content Include="Views\Login\Notfound.cshtml" />
+    <Content Include="Views\Login\Dashboord.cshtml" />
+    <Content Include="Views\Levperm\Create.cshtml" />
+    <Content Include="Views\Levperm\Delete.cshtml" />
+    <Content Include="Views\Levperm\Details.cshtml" />
+    <Content Include="Views\Levperm\Edit.cshtml" />
+    <Content Include="Views\Levperm\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4365</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4365/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

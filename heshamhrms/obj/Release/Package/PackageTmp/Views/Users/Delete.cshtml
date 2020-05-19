@@ -1,0 +1,65 @@
+﻿@model heshamhrms.Models.Users
+
+@{
+    ViewBag.Title = "حذف مستخدم";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+    try
+    {
+        if (Session["username"].ToString() != "ADMIN")
+        { Response.Redirect("~/Login/notauth"); }
+    }
+    catch { Response.Redirect("~/Login/home"); }
+        
+}
+
+<h2>حذف مستخدم</h2>
+
+<h3>هل تريد حذف هذا المستخدم</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fullname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fullname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Authorities.auth_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Authorities.auth_name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("الرجوع الي القائمة", "Index")
+        </div>
+    }
+</div>

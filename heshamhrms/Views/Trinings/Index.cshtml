@@ -1,0 +1,76 @@
+﻿@model IEnumerable<heshamhrms.Models.trainings>
+
+@{
+    ViewBag.Title = "المتدربين";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>المتدربين</h2>
+
+<p>
+    @Html.ActionLink("متدرب جديد", "Create")
+</p>
+<table class="table table-striped">
+    <thead class="tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.training_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_of_birth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.training_Qualification_university)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Start_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.end_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departments.Department_name)
+            </th>
+            <th>تعديل</th>
+            <th>تفاصيل</th>
+            <th>حذف</th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.training_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_of_birth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.training_Qualification_university)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Start_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.end_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departments.Department_name)
+                </td>
+                
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.training_id }) 
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.training_id }) 
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("حذف", "Delete", new { id = item.training_id })
+                </td>
+            </tr>
+        }
+
+</table>

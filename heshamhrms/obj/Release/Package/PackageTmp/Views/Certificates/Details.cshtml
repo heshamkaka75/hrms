@@ -1,0 +1,92 @@
+﻿@model heshamhrms.Models.Certificates
+
+@{
+    ViewBag.Title = "تفاصيل شهادة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل شهادة</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employees.Employee_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employees.Employee_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Certificate_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Certificate_name).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Certificate_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Certificate_type).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Certificate_source)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Certificate_source).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Certificate_duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Certificate_duration).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Certificate_from)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Certificate_from).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Certificate_to)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Certificate_to).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_time).
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Users.User_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Users.User_name).
+        </dd>
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.Certificate_id }) |
+    @Html.ActionLink("رجوع", "Index")
+</p>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8c043e28750a44be91ad4328a6e4f99b" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="hrmsModel.alerts" Width="1.5" PointX="5.25" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Authorities" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Certificates" Width="1.5" PointX="8.25" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Countries" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Courses" Width="1.5" PointX="8.25" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Courses_name" Width="1.5" PointX="6" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Departments" Width="1.5" PointX="0.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Employees" Width="1.5" PointX="3" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.fingerprints" Width="1.5" PointX="0.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Genders" Width="1.5" PointX="0.75" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Hr_table_index" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Jobs" Width="1.5" PointX="0.75" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Leave_permission" Width="1.5" PointX="5.25" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Locations" Width="1.5" PointX="1.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Manifestations" Width="1.5" PointX="11.25" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Marital_Status" Width="1.5" PointX="0.75" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.national_services" Width="1.5" PointX="6" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.National_services_status" Width="1.5" PointX="0.75" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Out_jobs" Width="1.5" PointX="11.25" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Qualifications" Width="1.5" PointX="0.75" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.ranks" Width="1.5" PointX="0.75" PointY="41.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Religions" Width="1.5" PointX="0.75" PointY="43.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Resigns" Width="1.5" PointX="11.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.sacks" Width="1.5" PointX="11.25" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.stop_working" Width="1.5" PointX="11.25" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.trainings" Width="1.5" PointX="9" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Transfers" Width="1.5" PointX="5.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Users" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Vacation_Balances" Width="1.5" PointX="5.25" PointY="36.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hrmsModel.Vacations_type" Width="1.5" PointX="3" PointY="37.125" IsExpanded="true" />
+        <AssociationConnector Association="hrmsModel.FK_alerts_edit" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_alerts_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Users_auth" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Certificates_edit" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Certificates_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Employees_coun" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_national_services_countri" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_trainings_countery" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Courses_cou_name" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Courses_edit_by" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Courses_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Departments_location" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Employees_dep" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_national_services_dep" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Out_jobs_loc" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_trainings_dep" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Transfers_from_dep" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Transfers_to_dep" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Employees_finger" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Employees_gender" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Employees_hig_qul" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Employees_job" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Employees_marital_status" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Employees_n_s_s" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Employees_qualif" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Employees_rank" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Employees_relgin" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Leave_permission_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Manifestations_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Out_jobs_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Resigns_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_sacks_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_stop_working_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Transfers_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Vacation_Balances_emp_if" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_national_services_finger" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Leave_permission_edit" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Manifestations_edit_by" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_national_services_marital_status" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_trainings_marital_status" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_national_services_qualifaciot" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_national_services_relgion" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Out_jobs_edit_by" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_trainings_qualifacton" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_trainings_relgion" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Resigns_edit" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_sacks_edit" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_stop_working_edit_by" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Transfers_edit" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Vacation_Balances_Vt_id" ManuallyRouted="false" />
+        <AssociationConnector Association="hrmsModel.FK_Departments_mangid" />
+        <EntityTypeShape EntityType="hrmsModel.Vacations" Width="1.5" PointX="8.25" PointY="17.5" />
+        <AssociationConnector Association="hrmsModel.FK_Vacations_dep" />
+        <AssociationConnector Association="hrmsModel.FK_Vacations_emp" />
+        <AssociationConnector Association="hrmsModel.FK_Vacations_edit_by" />
+        <AssociationConnector Association="hrmsModel.FK_Vacations_Vt_id" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
